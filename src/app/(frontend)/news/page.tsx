@@ -41,7 +41,7 @@ export default async function NewsPage() {
       {/* Breadcrumb */}
       <div className="breadcrumb">
         <div className="max-w-7xl mx-auto breadcrumb-text">
-          <Link href="/" className="hover:text-gold">Home</Link>
+          <Link href="/" className="hover:text-[#a1413b]">Home</Link>
           {' / '}
           <span className="text-gray-900 dark:text-white">News</span>
         </div>
@@ -87,7 +87,7 @@ export default async function NewsPage() {
                         })}
                       </time>
                     )}
-                    <h3 className="font-display text-lg mt-2 group-hover:text-gold transition-colors">
+                    <h3 className="font-display text-lg mt-2 group-hover:text-[#a1413b] transition-colors">
                       {post.title}
                     </h3>
                     {post.excerpt && (
@@ -95,7 +95,7 @@ export default async function NewsPage() {
                         {post.excerpt}
                       </p>
                     )}
-                    <span className="inline-flex items-center gap-1 mt-3 text-xs font-semibold text-gold uppercase tracking-wider">
+                    <span className="inline-flex items-center gap-1 mt-3 text-xs font-semibold text-[#a1413b] uppercase tracking-wider">
                       Read More
                       <span className="material-icons text-sm transition-transform group-hover:translate-x-1">
                         arrow_forward

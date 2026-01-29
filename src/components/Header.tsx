@@ -20,10 +20,10 @@ interface SearchResult {
 const navigation = [
   { name: 'About', href: '/about' },
   { name: 'Directory', href: '/directory' },
-  { name: 'Map', href: '/map' },
   { name: 'News & Events', href: '/news' },
   { name: 'Photo Gallery', href: '/gallery' },
   { name: 'Information', href: '/contact' },
+  { name: 'Leasing Opportunity', href: '/leasing' },
 ]
 
 export function Header() {
@@ -128,15 +128,11 @@ export function Header() {
       {/* Top utility bar */}
       <div className="utility-bar hidden lg:flex">
         <div className="flex gap-4">
-          <Link href="/contact" className="flex items-center gap-1 hover:text-white transition-colors">
-            <span className="material-icons text-xs">schedule</span>
-            Hours: 10am - 9pm
-          </Link>
           <a
             href="https://www.google.com/maps/dir/?api=1&destination=The+Shoppes+at+North+Brunswick,+North+Brunswick,+NJ"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-1 hover:text-white transition-colors"
+            className="flex items-center gap-1 text-white font-medium hover:text-[#a1413b] transition-colors"
           >
             <span className="material-icons text-xs">location_on</span>
             Directions
@@ -167,54 +163,60 @@ export function Header() {
       </div>
 
       {/* Main header */}
-      <header className="bg-black py-6 px-8 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto flex justify-between items-center">
-          {/* Logo */}
-          <Link href="/" className="flex flex-col group min-h-[80px] justify-center">
+      <header className="bg-black py-4 sticky top-0 z-50">
+        <div className="w-full px-6 xl:px-12 flex items-center">
+          {/* Logo - fixed width area */}
+          <Link href="/" className="flex-shrink-0 group py-2">
             {logoUrl ? (
               <Image
                 src={logoUrl}
                 alt="The Shoppes at North Brunswick"
-                width={300}
-                height={85}
-                className="h-20 w-auto object-contain mix-blend-lighten"
+                width={380}
+                height={100}
+                className="h-20 xl:h-24 w-auto object-contain mix-blend-lighten"
                 priority
               />
             ) : logoLoaded ? (
-              <>
-                <span className="text-white text-xl sm:text-2xl font-display tracking-[0.2em] leading-tight">
-                  THE SHOPPES <span className="text-gold italic">at</span>
+              <div className="flex flex-col">
+                <span className="text-white text-lg xl:text-xl font-display tracking-[0.2em] leading-tight">
+                  THE SHOPPES <span className="text-[#a1413b] italic">at</span>
                 </span>
-                <span className="text-white text-sm sm:text-lg tracking-[0.4em] font-light border-t border-gray-700 mt-1 pt-1">
+                <span className="text-white text-xs xl:text-sm tracking-[0.4em] font-light border-t border-gray-700 mt-1 pt-1">
                   NORTH BRUNSWICK
                 </span>
-              </>
+              </div>
             ) : null}
           </Link>
 
-          {/* Desktop navigation */}
-          <nav className="hidden lg:flex gap-8 items-center">
-            {navigation.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className={`nav-link ${isActive(item.href) ? 'nav-link-active' : ''}`}
+          {/* Spacer with subtle separator */}
+          <div className="hidden lg:flex flex-1 justify-end items-center ml-8 xl:ml-16">
+            {/* Decorative line */}
+            <div className="w-px h-8 bg-gradient-to-b from-transparent via-gray-700 to-transparent mr-8 xl:mr-12" />
+
+            {/* Desktop navigation */}
+            <nav className="flex items-center gap-5 xl:gap-7">
+              {navigation.map((item) => (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className={`nav-link whitespace-nowrap ${isActive(item.href) ? 'nav-link-active' : ''}`}
+                >
+                  {item.name}
+                </Link>
+              ))}
+              <button
+                onClick={() => setSearchOpen(true)}
+                className="text-white hover:text-[#a1413b] transition-colors ml-2"
               >
-                {item.name}
-              </Link>
-            ))}
-            <button
-              onClick={() => setSearchOpen(true)}
-              className="text-gray-300 hover:text-gold transition-colors"
-            >
-              <span className="material-icons text-lg">search</span>
-            </button>
-          </nav>
+                <span className="material-icons text-xl">search</span>
+              </button>
+            </nav>
+          </div>
 
           {/* Mobile menu button */}
           <button
             type="button"
-            className="lg:hidden text-white"
+            className="lg:hidden text-white ml-auto"
             onClick={() => setMobileMenuOpen(true)}
           >
             <Menu className="h-6 w-6" />
@@ -294,7 +296,7 @@ export function Header() {
                               }`}
                             >
                               <div className="w-12 h-12 bg-gray-100 dark:bg-zinc-800 flex items-center justify-center">
-                                <ShoppingBag className="w-6 h-6 text-gold" />
+                                <ShoppingBag className="w-6 h-6 text-[#a1413b]" />
                               </div>
                               <div className="flex-1 min-w-0">
                                 <p className="font-medium truncate">
@@ -306,7 +308,7 @@ export function Header() {
                                 </p>
                               </div>
                               {result.status === 'coming-soon' && (
-                                <span className="px-2 py-1 text-xs font-semibold bg-gold/10 text-gold uppercase tracking-wider">
+                                <span className="px-2 py-1 text-xs font-semibold bg-[#a1413b]/10 text-[#a1413b] uppercase tracking-wider">
                                   Coming Soon
                                 </span>
                               )}
@@ -324,7 +326,7 @@ export function Header() {
                     <p className="text-gray-500">No stores found for &ldquo;{searchQuery}&rdquo;</p>
                     <Link
                       href="/directory"
-                      className="inline-block mt-4 text-gold hover:underline font-medium"
+                      className="inline-block mt-4 text-[#a1413b] hover:underline font-medium"
                       onClick={() => setSearchOpen(false)}
                     >
                       Browse all stores
@@ -378,14 +380,14 @@ export function Header() {
                     <Image
                       src={logoUrl}
                       alt="The Shoppes at North Brunswick"
-                      width={200}
-                      height={57}
-                      className="h-14 w-auto object-contain mix-blend-lighten"
+                      width={280}
+                      height={80}
+                      className="h-20 w-auto object-contain mix-blend-lighten"
                     />
                   ) : (
                     <>
                       <span className="text-white text-xl font-display tracking-[0.2em] leading-tight">
-                        THE SHOPPES <span className="text-gold italic">at</span>
+                        THE SHOPPES <span className="text-[#a1413b] italic">at</span>
                       </span>
                       <span className="text-white text-sm tracking-[0.4em] font-light border-t border-gray-700 mt-1 pt-1">
                         NORTH BRUNSWICK
@@ -425,7 +427,7 @@ export function Header() {
                       href={item.href}
                       className={`block px-4 py-3 text-[11px] font-semibold tracking-widest uppercase ${
                         isActive(item.href)
-                          ? 'text-white border-l-2 border-gold'
+                          ? 'text-white border-l-2 border-[#a1413b]'
                           : 'text-gray-400 hover:text-white'
                       }`}
                       onClick={() => setMobileMenuOpen(false)}
@@ -439,15 +441,15 @@ export function Header() {
                 <div className="mt-8 pt-8 border-t border-gray-800">
                   <div className="space-y-3 text-sm text-gray-400">
                     <div className="flex items-center gap-3">
-                      <span className="material-icons text-gold text-sm">schedule</span>
+                      <span className="material-icons text-[#a1413b] text-sm">schedule</span>
                       <span>Mon-Sat: 10am-9pm, Sun: 11am-6pm</span>
                     </div>
                     <div className="flex items-center gap-3">
-                      <span className="material-icons text-gold text-sm">location_on</span>
+                      <span className="material-icons text-[#a1413b] text-sm">location_on</span>
                       <span>650 Shoppes Blvd, North Brunswick, NJ</span>
                     </div>
                     <div className="flex items-center gap-3">
-                      <span className="material-icons text-gold text-sm">phone</span>
+                      <span className="material-icons text-[#a1413b] text-sm">phone</span>
                       <span>(732) 555-1234</span>
                     </div>
                   </div>

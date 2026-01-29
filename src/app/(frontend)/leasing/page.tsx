@@ -22,13 +22,12 @@ export default async function LeasingPage() {
       <section className="relative h-[40vh] min-h-[300px] overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920&q=80)' }}
+          style={{ backgroundImage: 'url(https://pub-fd2ebfacd1a646a9935b8836eea536cf.r2.dev/media/hero/hero-image-6.jpg)' }}
         />
         <div className="absolute inset-0 bg-black/60" />
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="text-center text-white">
-            <h1 className="text-5xl md:text-6xl font-display mb-4">Leasing</h1>
-            <p className="text-sm tracking-[0.5em] uppercase font-light">Join Our Community</p>
+            <h1 className="text-5xl md:text-6xl font-display">Leasing Opportunities</h1>
           </div>
         </div>
       </section>
@@ -36,7 +35,7 @@ export default async function LeasingPage() {
       {/* Breadcrumb */}
       <div className="breadcrumb">
         <div className="max-w-7xl mx-auto breadcrumb-text">
-          <Link href="/" className="hover:text-gold">Home</Link>
+          <Link href="/" className="hover:text-[#a1413b]">Home</Link>
           {' / '}
           <span className="text-gray-900 dark:text-white">Leasing</span>
         </div>
@@ -63,7 +62,7 @@ export default async function LeasingPage() {
                     </p>
 
                     <div className="mt-8">
-                      <h3 className="text-xl font-display mb-4 text-gold italic">Benefits of Leasing</h3>
+                      <h3 className="text-xl font-display mb-4 text-[#a1413b] italic">Benefits of Leasing</h3>
                       <div className="grid sm:grid-cols-2 gap-4">
                         <div className="flex items-start gap-3">
                           <span className="gold-bullet mt-2" />
@@ -93,7 +92,7 @@ export default async function LeasingPage() {
                     </div>
 
                     <div className="mt-8">
-                      <h3 className="text-xl font-display mb-4 text-gold italic">Available Spaces</h3>
+                      <h3 className="text-xl font-display mb-4 text-[#a1413b] italic">Available Spaces</h3>
                       <p>
                         We have spaces available ranging from small inline retail to anchor positions.
                         Contact our leasing team to discuss your specific needs and available opportunities.
@@ -109,28 +108,28 @@ export default async function LeasingPage() {
                   Leasing Contact
                 </h3>
                 <div className="space-y-4">
-                  {settings.leasingContactEmail && (
-                    <div className="flex items-center gap-3">
-                      <span className="material-icons text-gold">email</span>
-                      <a
-                        href={`mailto:${settings.leasingContactEmail}`}
-                        className="text-gold hover:underline"
-                      >
-                        {settings.leasingContactEmail}
-                      </a>
-                    </div>
-                  )}
-                  {settings.leasingContactPhone && (
-                    <div className="flex items-center gap-3">
-                      <span className="material-icons text-gold">phone</span>
-                      <a
-                        href={`tel:${settings.leasingContactPhone}`}
-                        className="text-lg font-display hover:text-gold transition-colors"
-                      >
-                        {settings.leasingContactPhone}
-                      </a>
-                    </div>
-                  )}
+                  <div className="flex items-center gap-3">
+                    <span className="material-icons text-[#a1413b]">person</span>
+                    <span className="text-lg font-display">Joanna</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <span className="material-icons text-[#a1413b]">phone</span>
+                    <a
+                      href="tel:1-908-274-0530"
+                      className="text-lg font-display hover:text-[#a1413b] transition-colors"
+                    >
+                      1-908-274-0530
+                    </a>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <span className="material-icons text-[#a1413b]">email</span>
+                    <a
+                      href="mailto:joanna@theshoppesnb.com"
+                      className="text-[#a1413b] hover:underline"
+                    >
+                      joanna@theshoppesnb.com
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>

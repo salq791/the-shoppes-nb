@@ -34,7 +34,7 @@ export default async function AboutPage() {
       {/* Breadcrumb */}
       <div className="breadcrumb">
         <div className="max-w-7xl mx-auto breadcrumb-text">
-          <Link href="/" className="hover:text-gold">Home</Link>
+          <Link href="/" className="hover:text-[#a1413b]">Home</Link>
           {' / '}
           <span className="text-gray-900 dark:text-white">About</span>
         </div>
@@ -49,14 +49,14 @@ export default async function AboutPage() {
           </div>
 
           <div className="space-y-8 text-gray-600 dark:text-gray-400 leading-relaxed">
-            <p className="text-lg italic font-display text-center border-l-4 border-gold pl-6">
+            <p className="text-lg italic font-display text-center border-l-4 border-[#a1413b] pl-6">
               &ldquo;Experience the pinnacle of shopping elegance. The Shoppes at North Brunswick brings together
               the finest retailers, dining destinations, and services to create a premier neighborhood destination.&rdquo;
             </p>
 
             <div className="grid md:grid-cols-2 gap-12 mt-16">
               <div>
-                <h3 className="text-xl font-display mb-4 text-gold italic">Our Vision</h3>
+                <h3 className="text-xl font-display mb-4 text-[#a1413b] italic">Our Vision</h3>
                 <p>
                   The Shoppes at North Brunswick was established with a vision to create more than just a shopping center.
                   We wanted to build a place where families come together, where local businesses thrive,
@@ -64,7 +64,7 @@ export default async function AboutPage() {
                 </p>
               </div>
               <div>
-                <h3 className="text-xl font-display mb-4 text-gold italic">Our Promise</h3>
+                <h3 className="text-xl font-display mb-4 text-[#a1413b] italic">Our Promise</h3>
                 <p>
                   We are committed to providing an exceptional shopping experience with a carefully curated selection
                   of retailers, restaurants, and services that cater to the diverse needs of our community.
@@ -73,7 +73,7 @@ export default async function AboutPage() {
             </div>
 
             <div className="mt-16">
-              <h3 className="text-xl font-display mb-6 text-gold italic">What We Offer</h3>
+              <h3 className="text-xl font-display mb-6 text-[#a1413b] italic">What We Offer</h3>
               <div className="grid sm:grid-cols-2 gap-4">
                 <div className="flex items-start gap-3">
                   <span className="gold-bullet mt-2" />
@@ -122,7 +122,7 @@ export default async function AboutPage() {
               )}
               {settings.hours && (
                 <div>
-                  <p className="text-xs uppercase tracking-wider text-gold mb-2">Hours</p>
+                  <p className="text-xs uppercase tracking-wider text-[#a1413b] mb-2">Hours</p>
                   <p className="text-sm whitespace-pre-line">{settings.hours}</p>
                 </div>
               )}
@@ -132,16 +132,14 @@ export default async function AboutPage() {
               <h3 className="text-xs uppercase tracking-[0.3em] font-bold text-gray-400 mb-6 border-b border-gray-200 dark:border-zinc-700 pb-4">
                 Contact Us
               </h3>
-              {settings.phone && (
-                <p className="text-lg font-display mb-4">
-                  <a href={`tel:${settings.phone}`} className="hover:text-gold transition-colors">
-                    {settings.phone}
-                  </a>
-                </p>
-              )}
+              <p className="text-lg font-display mb-4">
+                <a href="tel:1-908-274-0530" className="hover:text-[#a1413b] transition-colors">
+                  1-908-274-0530
+                </a>
+              </p>
               {settings.email && (
                 <p className="text-sm">
-                  <a href={`mailto:${settings.email}`} className="text-gold hover:underline">
+                  <a href={`mailto:${settings.email}`} className="text-[#a1413b] hover:underline">
                     {settings.email}
                   </a>
                 </p>

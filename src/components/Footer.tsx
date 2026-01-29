@@ -94,7 +94,7 @@ export async function Footer() {
                     year: 'numeric',
                   })}
                 </p>
-                <p className="text-xs font-semibold mt-1 group-hover:text-gold transition-colors">
+                <p className="text-xs font-semibold mt-1 group-hover:text-[#a1413b] transition-colors">
                   {latestEvent.title}
                 </p>
               </div>
@@ -114,7 +114,7 @@ export async function Footer() {
               <li key={item.name}>
                 <Link
                   href={item.href}
-                  className="flex items-center gap-2 hover:text-gold transition-colors cursor-pointer"
+                  className="flex items-center gap-2 hover:text-[#a1413b] transition-colors cursor-pointer"
                 >
                   <span className="material-icons text-xs">{item.icon}</span>
                   {item.name}
@@ -134,7 +134,7 @@ export async function Footer() {
               <li key={item.name}>
                 <Link
                   href={item.href}
-                  className="flex items-center gap-2 hover:text-gold transition-colors cursor-pointer"
+                  className="flex items-center gap-2 hover:text-[#a1413b] transition-colors cursor-pointer"
                 >
                   <span className="material-icons text-xs">{item.icon}</span>
                   {item.name}

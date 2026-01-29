@@ -53,7 +53,7 @@ export function NewsletterForm({ variant = 'light' }: NewsletterFormProps) {
           required
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className={`w-full border-none text-xs py-3 px-4 focus:ring-1 focus:ring-gold focus:outline-none ${
+          className={`w-full border-none text-xs py-3 px-4 focus:ring-1 focus:ring-[#a1413b] focus:outline-none ${
             isDark
               ? 'bg-zinc-900 text-white placeholder:text-gray-500'
               : 'bg-gray-100 text-gray-900 placeholder:text-gray-400'
@@ -64,7 +64,7 @@ export function NewsletterForm({ variant = 'light' }: NewsletterFormProps) {
         <button
           type="submit"
           disabled={status === 'loading' || status === 'success'}
-          className="bg-gold px-4 hover:bg-white hover:text-black transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
+          className="bg-[#a1413b] px-4 hover:bg-white hover:text-black transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
         >
           {status === 'loading' ? (
             <svg className="animate-spin h-4 w-4 text-white" viewBox="0 0 24 24">

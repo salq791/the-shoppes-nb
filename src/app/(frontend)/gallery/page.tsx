@@ -37,7 +37,7 @@ export default async function GalleryPage() {
       {/* Breadcrumb */}
       <div className="breadcrumb">
         <div className="max-w-7xl mx-auto breadcrumb-text">
-          <Link href="/" className="hover:text-gold">Home</Link>
+          <Link href="/" className="hover:text-[#a1413b]">Home</Link>
           {' / '}
           <span className="text-gray-900 dark:text-white">Photo Gallery</span>
         </div>

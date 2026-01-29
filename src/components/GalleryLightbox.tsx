@@ -82,14 +82,14 @@ export function GalleryLightbox({ images }: GalleryLightboxProps) {
             <div key={item.id} className="mb-6 break-inside-avoid group">
               <button
                 onClick={() => openLightbox(index)}
-                className="w-full text-left overflow-hidden border border-gray-100 dark:border-zinc-800 transition-all group-hover:border-gold cursor-pointer"
+                className="w-full text-left overflow-hidden border border-gray-100 dark:border-zinc-800 transition-all group-hover:border-[#a1413b] cursor-pointer"
               >
                 <Image
                   src={item.image.url || ''}
                   alt={item.image.alt || item.caption || 'Gallery image'}
                   width={item.image.width || 600}
                   height={item.image.height || 400}
-                  className="w-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                  className="w-full object-cover"
                 />
               </button>
               {item.caption && (

@@ -35,7 +35,7 @@ export default async function ContactPage() {
       {/* Breadcrumb */}
       <div className="breadcrumb">
         <div className="max-w-7xl mx-auto breadcrumb-text">
-          <Link href="/" className="hover:text-gold">Home</Link>
+          <Link href="/" className="hover:text-[#a1413b]">Home</Link>
           {' / '}
           <span className="text-gray-900 dark:text-white">Contact</span>
         </div>
@@ -53,30 +53,28 @@ export default async function ContactPage() {
               <div className="space-y-8">
                 {settings.address && (
                   <div className="flex gap-4">
-                    <span className="material-icons text-gold">location_on</span>
+                    <span className="material-icons text-[#a1413b]">location_on</span>
                     <div>
                       <h3 className="text-xs uppercase tracking-[0.2em] font-bold text-gray-400 mb-2">Address</h3>
                       <p className="whitespace-pre-line">{settings.address}</p>
                     </div>
                   </div>
                 )}
-                {settings.phone && (
-                  <div className="flex gap-4">
-                    <span className="material-icons text-gold">phone</span>
-                    <div>
-                      <h3 className="text-xs uppercase tracking-[0.2em] font-bold text-gray-400 mb-2">Phone</h3>
-                      <a href={`tel:${settings.phone}`} className="text-lg font-display hover:text-gold transition-colors">
-                        {settings.phone}
-                      </a>
-                    </div>
+                <div className="flex gap-4">
+                  <span className="material-icons text-[#a1413b]">phone</span>
+                  <div>
+                    <h3 className="text-xs uppercase tracking-[0.2em] font-bold text-gray-400 mb-2">Phone</h3>
+                    <a href="tel:1-908-274-0530" className="text-lg font-display hover:text-[#a1413b] transition-colors">
+                      1-908-274-0530
+                    </a>
                   </div>
-                )}
+                </div>
                 {settings.email && (
                   <div className="flex gap-4">
-                    <span className="material-icons text-gold">email</span>
+                    <span className="material-icons text-[#a1413b]">email</span>
                     <div>
                       <h3 className="text-xs uppercase tracking-[0.2em] font-bold text-gray-400 mb-2">Email</h3>
-                      <a href={`mailto:${settings.email}`} className="text-gold hover:underline">
+                      <a href={`mailto:${settings.email}`} className="text-[#a1413b] hover:underline">
                         {settings.email}
                       </a>
                     </div>
@@ -84,7 +82,7 @@ export default async function ContactPage() {
                 )}
                 {settings.hours && (
                   <div className="flex gap-4">
-                    <span className="material-icons text-gold">schedule</span>
+                    <span className="material-icons text-[#a1413b]">schedule</span>
                     <div>
                       <h3 className="text-xs uppercase tracking-[0.2em] font-bold text-gray-400 mb-2">Hours</h3>
                       <p className="whitespace-pre-line">{settings.hours}</p>

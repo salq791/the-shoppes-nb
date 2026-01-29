@@ -135,7 +135,7 @@ export function HeroCarousel() {
                 {slide.cta.text}
               </Link>
               {slide.secondaryCta && (
-                <Link href={slide.secondaryCta.href} className="btn-secondary text-white border-white/30 hover:bg-gold hover:border-gold">
+                <Link href={slide.secondaryCta.href} className="btn-secondary text-white border-white/30 hover:bg-[#a1413b] hover:border-[#a1413b]">
                   {slide.secondaryCta.text}
                 </Link>
               )}
@@ -147,14 +147,14 @@ export function HeroCarousel() {
       {/* Navigation arrows */}
       <button
         onClick={prevSlide}
-        className="absolute left-4 lg:left-8 top-1/2 -translate-y-1/2 z-20 w-10 h-10 border border-white/30 flex items-center justify-center text-white/70 hover:bg-gold hover:border-gold hover:text-white transition-all"
+        className="absolute left-4 lg:left-8 top-1/2 -translate-y-1/2 z-20 w-10 h-10 border border-white/30 flex items-center justify-center text-white/70 hover:bg-[#a1413b] hover:border-[#a1413b] hover:text-white transition-all"
         aria-label="Previous slide"
       >
         <span className="material-icons text-sm">chevron_left</span>
       </button>
       <button
         onClick={nextSlide}
-        className="absolute right-4 lg:right-8 top-1/2 -translate-y-1/2 z-20 w-10 h-10 border border-white/30 flex items-center justify-center text-white/70 hover:bg-gold hover:border-gold hover:text-white transition-all"
+        className="absolute right-4 lg:right-8 top-1/2 -translate-y-1/2 z-20 w-10 h-10 border border-white/30 flex items-center justify-center text-white/70 hover:bg-[#a1413b] hover:border-[#a1413b] hover:text-white transition-all"
         aria-label="Next slide"
       >
         <span className="material-icons text-sm">chevron_right</span>
@@ -168,7 +168,7 @@ export function HeroCarousel() {
             onClick={() => goToSlide(index)}
             className={`w-2 h-2 transition-all duration-300 ${
               index === currentSlide
-                ? 'w-8 bg-gold'
+                ? 'w-8 bg-[#a1413b]'
                 : 'bg-white/50 hover:bg-white/80'
             }`}
             aria-label={`Go to slide ${index + 1}`}

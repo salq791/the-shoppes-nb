@@ -93,7 +93,7 @@ export default async function HomePage() {
       <section className="py-20 bg-white dark:bg-background-dark">
         <div className="max-w-7xl mx-auto px-8">
           <div className="text-center mb-16">
-            <span className="section-subheading">Explore Our Boutiques</span>
+            <span className="text-sm uppercase tracking-[0.4em] font-semibold" style={{ color: 'rgb(161, 65, 59)' }}>Explore Our Boutiques</span>
             <h2 className="section-heading mt-2">Shop by Category</h2>
           </div>
 
@@ -104,7 +104,7 @@ export default async function HomePage() {
                 href={`/category/${category.slug}`}
                 className="group text-center"
               >
-                <div className="aspect-square bg-gray-50 dark:bg-zinc-900 border border-gray-100 dark:border-zinc-800 flex items-center justify-center mb-4 transition-all group-hover:border-gold">
+                <div className="aspect-square bg-gray-50 dark:bg-zinc-900 border border-gray-100 dark:border-zinc-800 flex items-center justify-center mb-4 transition-all group-hover:border-[#a1413b]">
                   {category.image && typeof category.image === 'object' ? (
                     <Image
                       src={category.image.url || ''}
@@ -114,7 +114,7 @@ export default async function HomePage() {
                       className="w-20 h-20 object-contain grayscale group-hover:grayscale-0 transition-all duration-500"
                     />
                   ) : (
-                    <span className="material-icons text-4xl text-gray-300 group-hover:text-gold transition-colors">
+                    <span className="material-icons text-4xl text-gray-300 group-hover:text-[#a1413b] transition-colors">
                       {category.slug === 'apparel' ? 'checkroom' :
                        category.slug === 'eat-drink' ? 'restaurant' :
                        category.slug === 'specialty' ? 'diamond' :
@@ -123,7 +123,7 @@ export default async function HomePage() {
                     </span>
                   )}
                 </div>
-                <h3 className="text-xs uppercase tracking-[0.2em] font-semibold group-hover:text-gold transition-colors">
+                <h3 className="text-xs uppercase tracking-[0.2em] font-semibold group-hover:text-[#a1413b] transition-colors">
                   {category.name}
                 </h3>
                 <p className="text-[10px] text-gray-500 mt-1">{category.tenantCount} Stores</p>
@@ -171,13 +171,13 @@ export default async function HomePage() {
                       </div>
                     )}
                     {tenant.status === 'coming-soon' && (
-                      <div className="absolute top-4 right-4 px-3 py-1 bg-gold text-white text-[10px] font-semibold uppercase tracking-wider">
+                      <div className="absolute top-4 right-4 px-3 py-1 bg-[#a1413b] text-white text-[10px] font-semibold uppercase tracking-wider">
                         Coming Soon
                       </div>
                     )}
                   </div>
                   <div className="py-4">
-                    <h3 className="font-display text-lg group-hover:text-gold transition-colors">
+                    <h3 className="font-display text-lg group-hover:text-[#a1413b] transition-colors">
                       {tenant.name}
                     </h3>
                     {tenant.category && typeof tenant.category === 'object' && (
@@ -242,7 +242,7 @@ export default async function HomePage() {
                     <div className="absolute inset-0 bg-black/40" />
                     <div className="absolute bottom-4 left-4">
                       <div className="bg-white px-3 py-2 text-center">
-                        <span className="block text-2xl font-bold text-gold">
+                        <span className="block text-2xl font-bold text-[#a1413b]">
                           {new Date(event.date).getDate()}
                         </span>
                         <span className="block text-[10px] font-semibold uppercase tracking-wider">
@@ -252,7 +252,7 @@ export default async function HomePage() {
                     </div>
                   </div>
                   <div className="py-4">
-                    <h3 className="font-display text-lg group-hover:text-gold transition-colors">
+                    <h3 className="font-display text-lg group-hover:text-[#a1413b] transition-colors">
                       {event.title}
                     </h3>
                     {event.startTime && (
@@ -321,7 +321,7 @@ export default async function HomePage() {
                         })}
                       </time>
                     )}
-                    <h3 className="font-display text-lg mt-2 group-hover:text-gold transition-colors">
+                    <h3 className="font-display text-lg mt-2 group-hover:text-[#a1413b] transition-colors">
                       {post.title}
                     </h3>
                     {post.excerpt && (
@@ -329,7 +329,7 @@ export default async function HomePage() {
                         {post.excerpt}
                       </p>
                     )}
-                    <span className="inline-flex items-center gap-1 mt-3 text-xs font-semibold text-gold uppercase tracking-wider">
+                    <span className="inline-flex items-center gap-1 mt-3 text-xs font-semibold text-[#a1413b] uppercase tracking-wider">
                       Read More
                       <span className="material-icons text-sm transition-transform group-hover:translate-x-1">
                         arrow_forward
@@ -352,7 +352,7 @@ export default async function HomePage() {
       {/* Newsletter Signup */}
       <section className="py-20 bg-black text-white">
         <div className="max-w-2xl mx-auto px-8 text-center">
-          <span className="text-xs uppercase tracking-[0.4em] text-gold">Stay Connected</span>
+          <span className="text-xs uppercase tracking-[0.4em] text-[#a1413b]">Stay Connected</span>
           <h2 className="font-display text-3xl sm:text-4xl mt-4">
             Join the Shoppes Insider
           </h2>

@@ -88,9 +88,9 @@ export default async function CategoryPage({ params }: Props) {
       {/* Breadcrumb */}
       <div className="breadcrumb">
         <div className="max-w-7xl mx-auto breadcrumb-text">
-          <Link href="/" className="hover:text-gold">Home</Link>
+          <Link href="/" className="hover:text-[#a1413b]">Home</Link>
           {' / '}
-          <Link href="/directory" className="hover:text-gold">Directory</Link>
+          <Link href="/directory" className="hover:text-[#a1413b]">Directory</Link>
           {' / '}
           <span className="text-gray-900 dark:text-white">{category.name}</span>
         </div>
@@ -103,7 +103,7 @@ export default async function CategoryPage({ params }: Props) {
           <div className="flex flex-wrap justify-center gap-4 mb-12">
             <Link
               href="/directory"
-              className="px-4 py-2 text-[11px] font-semibold tracking-widest uppercase text-gray-500 border border-gray-200 dark:border-zinc-700 hover:bg-gold hover:border-gold hover:text-white transition-all"
+              className="px-4 py-2 text-[11px] font-semibold tracking-widest uppercase text-gray-500 border border-gray-200 dark:border-zinc-700 hover:bg-[#a1413b] hover:border-[#a1413b] hover:text-white transition-all"
             >
               All
             </Link>
@@ -114,7 +114,7 @@ export default async function CategoryPage({ params }: Props) {
                 className={`px-4 py-2 text-[11px] font-semibold tracking-widest uppercase transition-all ${
                   cat.id === category.id
                     ? 'bg-primary text-white'
-                    : 'text-gray-500 border border-gray-200 dark:border-zinc-700 hover:bg-gold hover:border-gold hover:text-white'
+                    : 'text-gray-500 border border-gray-200 dark:border-zinc-700 hover:bg-[#a1413b] hover:border-[#a1413b] hover:text-white'
                 }`}
               >
                 {cat.name}
@@ -131,7 +131,7 @@ export default async function CategoryPage({ params }: Props) {
                   href={`/directory/${tenant.slug}`}
                   className="group"
                 >
-                  <div className="aspect-square overflow-hidden bg-gray-50 dark:bg-zinc-900 border border-gray-100 dark:border-zinc-800 flex items-center justify-center p-8 transition-all group-hover:border-gold relative">
+                  <div className="aspect-square overflow-hidden bg-gray-50 dark:bg-zinc-900 border border-gray-100 dark:border-zinc-800 flex items-center justify-center p-8 transition-all group-hover:border-[#a1413b] relative">
                     {tenant.logo && typeof tenant.logo === 'object' ? (
                       <Image
                         src={tenant.logo.url || ''}
@@ -141,18 +141,18 @@ export default async function CategoryPage({ params }: Props) {
                         className="max-h-full max-w-full object-contain grayscale group-hover:grayscale-0 transition-all duration-500"
                       />
                     ) : (
-                      <span className="text-5xl font-display text-gray-200 group-hover:text-gold transition-colors">
+                      <span className="text-5xl font-display text-gray-200 group-hover:text-[#a1413b] transition-colors">
                         {tenant.name.charAt(0)}
                       </span>
                     )}
                     {tenant.status === 'coming-soon' && (
-                      <div className="absolute top-4 right-4 px-2 py-1 bg-gold text-white text-[10px] font-semibold uppercase tracking-wider">
+                      <div className="absolute top-4 right-4 px-2 py-1 bg-[#a1413b] text-white text-[10px] font-semibold uppercase tracking-wider">
                         Coming Soon
                       </div>
                     )}
                   </div>
                   <div className="py-4 text-center">
-                    <h3 className="text-xs uppercase tracking-[0.2em] font-semibold group-hover:text-gold transition-colors">
+                    <h3 className="text-xs uppercase tracking-[0.2em] font-semibold group-hover:text-[#a1413b] transition-colors">
                       {tenant.name}
                     </h3>
                     <p className="text-[10px] text-gray-500 mt-1">{category.name}</p>

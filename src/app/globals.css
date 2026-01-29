@@ -30,15 +30,30 @@
   }
 
   .btn-primary {
-    @apply inline-flex items-center justify-center gap-2 bg-primary text-white py-4 px-8 text-xs tracking-[0.3em] uppercase font-bold transition-all duration-300 hover:bg-gold;
+    @apply inline-flex items-center justify-center gap-2 bg-primary text-white py-4 px-8 text-xs tracking-[0.3em] uppercase font-bold transition-all duration-300;
+  }
+
+  .btn-primary:hover {
+    background-color: #a1413b;
   }
 
   .btn-secondary {
-    @apply inline-flex items-center justify-center gap-2 bg-transparent border border-gray-300 dark:border-zinc-700 py-4 px-8 text-xs tracking-[0.3em] uppercase font-bold transition-all duration-300 hover:bg-gold hover:border-gold hover:text-white;
+    @apply inline-flex items-center justify-center gap-2 bg-transparent border border-gray-300 dark:border-zinc-700 py-4 px-8 text-xs tracking-[0.3em] uppercase font-bold transition-all duration-300 hover:text-white;
+  }
+
+  .btn-secondary:hover {
+    background-color: #a1413b;
+    border-color: #a1413b;
   }
 
   .btn-outline {
-    @apply inline-flex items-center justify-center gap-2 border border-gold bg-transparent px-6 py-3 text-xs tracking-[0.2em] uppercase font-semibold text-gold transition-all duration-300 hover:bg-gold hover:text-white;
+    @apply inline-flex items-center justify-center gap-2 bg-transparent px-6 py-3 text-xs tracking-[0.2em] uppercase font-semibold transition-all duration-300 hover:text-white;
+    border: 1px solid #a1413b;
+    color: #a1413b;
+  }
+
+  .btn-outline:hover {
+    background-color: #a1413b;
   }
 
   .section-heading {
@@ -46,7 +61,8 @@
   }
 
   .section-subheading {
-    @apply text-xs uppercase tracking-[0.4em] text-gold;
+    @apply text-xs uppercase tracking-[0.4em];
+    color: #a1413b;
   }
 
   .card {
@@ -54,15 +70,20 @@
   }
 
   .card:hover {
-    @apply border-gold/30;
+    border-color: rgba(161, 65, 59, 0.3);
   }
 
   .input-field {
-    @apply w-full border-none bg-zinc-900 px-4 py-3 text-xs text-white placeholder-gray-500 focus:ring-1 focus:ring-gold focus:outline-none;
+    @apply w-full border-none bg-zinc-900 px-4 py-3 text-xs text-white placeholder-gray-500 focus:outline-none;
+  }
+
+  .input-field:focus {
+    box-shadow: 0 0 0 1px #a1413b;
   }
 
   .link-gold {
-    @apply text-gold font-semibold underline cursor-pointer transition-colors hover:text-white;
+    @apply font-semibold underline cursor-pointer transition-colors hover:text-white;
+    color: #a1413b;
   }
 
   /* Top utility bar */
@@ -72,11 +93,29 @@
 
   /* Navigation link styles */
   .nav-link {
-    @apply text-[11px] font-semibold tracking-widest text-gray-300 uppercase transition-colors hover:text-gold;
+    @apply text-[13px] font-bold tracking-wide text-white uppercase transition-all duration-200 relative;
+  }
+
+  .nav-link:hover {
+    color: #a1413b;
+  }
+
+  .nav-link::after {
+    content: '';
+    @apply absolute -bottom-1 left-0 w-0 h-0.5 transition-all duration-300;
+    background-color: #a1413b;
+  }
+
+  .nav-link:hover::after {
+    @apply w-full;
   }
 
   .nav-link-active {
-    @apply text-white border-b border-gold pb-1;
+    color: #a1413b;
+  }
+
+  .nav-link-active::after {
+    @apply w-full;
   }
 
   /* Breadcrumb styles */
@@ -95,7 +134,8 @@
 
   /* Gold bullet list */
   .gold-bullet {
-    @apply w-1.5 h-1.5 bg-gold rounded-full;
+    @apply w-1.5 h-1.5 rounded-full;
+    background-color: #a1413b;
   }
 
   /* Brand reel scrollbar */
@@ -108,7 +148,7 @@
   }
 
   .brand-reel::-webkit-scrollbar-thumb {
-    @apply bg-gold;
+    background-color: #a1413b;
   }
 
   .dark .brand-reel::-webkit-scrollbar-track {
@@ -127,7 +167,8 @@
 
 @layer utilities {
   .text-gradient-gold {
-    @apply bg-gradient-to-r from-gold to-yellow-600 bg-clip-text text-transparent;
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(to right, #a1413b, #c45a52);
   }
 
   .animate-in {
@@ -165,20 +206,20 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #c5a059;
+  background: #a1413b;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #b8934d;
+  background: #8a3732;
 }
 
 /* Selection color */
 ::selection {
-  background-color: rgba(197, 160, 89, 0.3);
+  background-color: rgba(161, 65, 59, 0.3);
   color: #1a1a1a;
 }
 
 .dark ::selection {
-  background-color: rgba(197, 160, 89, 0.3);
+  background-color: rgba(161, 65, 59, 0.3);
   color: #ffffff;
 }

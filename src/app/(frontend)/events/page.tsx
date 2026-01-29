@@ -41,7 +41,7 @@ export default async function EventsPage() {
       {/* Breadcrumb */}
       <div className="breadcrumb">
         <div className="max-w-7xl mx-auto breadcrumb-text">
-          <Link href="/" className="hover:text-gold">Home</Link>
+          <Link href="/" className="hover:text-[#a1413b]">Home</Link>
           {' / '}
           <span className="text-gray-900 dark:text-white">Events</span>
         </div>
@@ -79,7 +79,7 @@ export default async function EventsPage() {
                     <div className="absolute inset-0 bg-black/40" />
                     <div className="absolute bottom-4 left-4">
                       <div className="bg-white px-3 py-2 text-center">
-                        <span className="block text-2xl font-bold text-gold">
+                        <span className="block text-2xl font-bold text-[#a1413b]">
                           {new Date(event.date).getDate()}
                         </span>
                         <span className="block text-[10px] font-semibold uppercase tracking-wider">
@@ -88,13 +88,13 @@ export default async function EventsPage() {
                       </div>
                     </div>
                     {event.featured && (
-                      <div className="absolute top-4 right-4 px-2 py-1 bg-gold text-white text-[10px] font-semibold uppercase tracking-wider">
+                      <div className="absolute top-4 right-4 px-2 py-1 bg-[#a1413b] text-white text-[10px] font-semibold uppercase tracking-wider">
                         Featured
                       </div>
                     )}
                   </div>
                   <div className="py-4">
-                    <h3 className="font-display text-lg group-hover:text-gold transition-colors">
+                    <h3 className="font-display text-lg group-hover:text-[#a1413b] transition-colors">
                       {event.title}
                     </h3>
                     {event.startTime && (
@@ -161,7 +161,7 @@ export default async function EventsPage() {
                         year: 'numeric',
                       })}
                     </time>
-                    <h3 className="text-sm font-semibold mt-1 group-hover:text-gold transition-colors">
+                    <h3 className="text-sm font-semibold mt-1 group-hover:text-[#a1413b] transition-colors">
                       {event.title}
                     </h3>
                   </div>

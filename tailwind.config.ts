@@ -11,7 +11,7 @@ const config: Config = {
     extend: {
       colors: {
         primary: '#1a1a1a',
-        gold: '#c5a059',
+        gold: '#a1413b',
         'background-light': '#ffffff',
         'background-dark': '#0f0f0f',
         surface: {

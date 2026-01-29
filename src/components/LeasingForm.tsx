@@ -59,7 +59,7 @@ export function LeasingForm() {
     }
   }
 
-  const inputClass = "mt-1 block w-full border border-gray-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 px-4 py-3 text-sm focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold disabled:opacity-50"
+  const inputClass = "mt-1 block w-full border border-gray-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 px-4 py-3 text-sm focus:border-[#a1413b] focus:outline-none focus:ring-1 focus:ring-[#a1413b] disabled:opacity-50"
   const labelClass = "block text-xs uppercase tracking-[0.2em] font-semibold text-gray-500 dark:text-gray-400"
 
   return (
