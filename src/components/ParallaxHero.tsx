@@ -39,7 +39,7 @@ export function ParallaxHero({
   const overlayClasses = {
     light: 'bg-white/60',
     dark: 'bg-secondary-900/60',
-    gradient: 'bg-gradient-to-b from-primary-900/40 via-secondary-900/30 to-cream-100',
+    gradient: 'bg-gradient-to-b from-primary-900/20 via-secondary-900/10 to-cream-100',
   }
 
   return (
