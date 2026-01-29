@@ -28,8 +28,8 @@ export async function generateMetadata({ params }: Props) {
   const post = await getNewsPost(slug)
   if (!post) return { title: 'Not Found' }
   return {
-    title: `${post.title} | Festival Plaza News`,
-    description: post.excerpt || `Read about ${post.title} at Festival Plaza.`,
+    title: `${post.title} | The Shoppes at North Brunswick News`,
+    description: post.excerpt || `Read about ${post.title} at The Shoppes at North Brunswick.`,
   }
 }
 

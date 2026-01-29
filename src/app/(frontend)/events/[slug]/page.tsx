@@ -27,8 +27,8 @@ export async function generateMetadata({ params }: Props) {
   const event = await getEvent(slug)
   if (!event) return { title: 'Not Found' }
   return {
-    title: `${event.title} | Festival Plaza Events`,
-    description: `Join us for ${event.title} at Festival Plaza.`,
+    title: `${event.title} | The Shoppes at North Brunswick Events`,
+    description: `Join us for ${event.title} at The Shoppes at North Brunswick.`,
   }
 }
 

@@ -21,8 +21,8 @@ export async function POST(request: Request) {
     // Example with Resend (uncomment when RESEND_API_KEY is set):
     // const resend = new Resend(process.env.RESEND_API_KEY)
     // await resend.emails.send({
-    //   from: 'Festival Plaza <noreply@festivalplazashops.com>',
-    //   to: ['info@festivalplazashops.com'],
+    //   from: 'The Shoppes at North Brunswick <noreply@theshoppesatnorthbrunswick.com>',
+    //   to: ['info@theshoppesatnorthbrunswick.com'],
     //   subject: `Contact Form: ${subject}`,
     //   html: `
     //     <h2>New Contact Form Submission</h2>
