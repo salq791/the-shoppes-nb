@@ -59,6 +59,9 @@ export default buildConfig({
       collections: {
         media: {
           prefix: 'media',
+          generateFileURL: ({ filename, prefix }) => {
+            return `${process.env.R2_PUBLIC_URL}/${prefix}/${filename}`
+          },
         },
         documents: {
           prefix: 'documents',
