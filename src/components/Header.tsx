@@ -374,12 +374,24 @@ export function Header() {
             >
               <div className="flex items-center justify-between p-6 border-b border-gray-800">
                 <Link href="/" className="flex flex-col" onClick={() => setMobileMenuOpen(false)}>
-                  <span className="text-white text-xl font-display tracking-[0.2em] leading-tight">
-                    THE SHOPPES <span className="text-gold italic">at</span>
-                  </span>
-                  <span className="text-white text-sm tracking-[0.4em] font-light border-t border-gray-700 mt-1 pt-1">
-                    NORTH BRUNSWICK
-                  </span>
+                  {logoUrl ? (
+                    <Image
+                      src={logoUrl}
+                      alt="The Shoppes at North Brunswick"
+                      width={200}
+                      height={57}
+                      className="h-14 w-auto object-contain mix-blend-lighten"
+                    />
+                  ) : (
+                    <>
+                      <span className="text-white text-xl font-display tracking-[0.2em] leading-tight">
+                        THE SHOPPES <span className="text-gold italic">at</span>
+                      </span>
+                      <span className="text-white text-sm tracking-[0.4em] font-light border-t border-gray-700 mt-1 pt-1">
+                        NORTH BRUNSWICK
+                      </span>
+                    </>
+                  )}
                 </Link>
                 <button
                   type="button"
