@@ -18,6 +18,7 @@ interface SearchResult {
 }
 
 const navigation = [
+  { name: 'Home', href: '/' },
   { name: 'About', href: '/about' },
   { name: 'Directory', href: '/directory' },
   { name: 'News & Events', href: '/news' },
