@@ -254,8 +254,14 @@ export interface Tenant {
     [k: string]: unknown;
   } | null;
   logo?: (number | null) | Media;
+  /**
+   * Add photos of this store location
+   */
   photos?:
     | {
+        /**
+         * Select or upload an image
+         */
         image: number | Media;
         id?: string | null;
       }[]

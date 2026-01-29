@@ -20,8 +20,29 @@ import { SiteSettings } from './globals/SiteSettings'
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
 
+const serverURL =
+  process.env.NEXT_PUBLIC_SERVER_URL ||
+  process.env.URL ||
+  process.env.DEPLOY_URL ||
+  'http://localhost:3000'
+
+const allowedOrigins = Array.from(
+  new Set(
+    [serverURL, process.env.PAYLOAD_ALLOWED_ORIGINS]
+      .filter(Boolean)
+      .flatMap((value) =>
+        (value || '')
+          .split(',')
+          .map((entry) => entry.trim())
+          .filter(Boolean)
+      )
+  )
+)
+
 export default buildConfig({
-  serverURL: process.env.NEXT_PUBLIC_SERVER_URL || 'http://localhost:3000',
+  serverURL,
+  cors: allowedOrigins,
+  csrf: allowedOrigins,
   admin: {
     user: Users.slug,
     importMap: {
