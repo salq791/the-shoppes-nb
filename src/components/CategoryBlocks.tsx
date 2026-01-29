@@ -26,11 +26,11 @@ interface CategoryBlocksProps {
 }
 
 const iconMap: Record<string, React.ReactNode> = {
-  shirt: <Shirt className="w-12 h-12" />,
-  utensils: <UtensilsCrossed className="w-12 h-12" />,
-  'shopping-bag': <ShoppingBag className="w-12 h-12" />,
-  baby: <Baby className="w-12 h-12" />,
-  briefcase: <Briefcase className="w-12 h-12" />,
+  shirt: <Shirt className="w-16 h-16" />,
+  utensils: <UtensilsCrossed className="w-16 h-16" />,
+  'shopping-bag': <ShoppingBag className="w-16 h-16" />,
+  baby: <Baby className="w-16 h-16" />,
+  briefcase: <Briefcase className="w-16 h-16" />,
 }
 
 const colorClasses = [
@@ -94,7 +94,7 @@ export function CategoryBlocks({ categories, title, subtitle }: CategoryBlocksPr
                   >
                     {category.icon && iconMap[category.icon]
                       ? iconMap[category.icon]
-                      : <ShoppingBag className="w-12 h-12" />}
+                      : <ShoppingBag className="w-16 h-16" />}
                   </div>
 
                   {/* Name */}
