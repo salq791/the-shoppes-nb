@@ -55,12 +55,23 @@ export const Tenants: CollectionConfig = {
     {
       name: 'photos',
       type: 'array',
+      label: 'Store Photos',
+      labels: {
+        singular: 'Photo',
+        plural: 'Photos',
+      },
+      admin: {
+        description: 'Add photos of this store location',
+      },
       fields: [
         {
           name: 'image',
           type: 'upload',
           relationTo: 'media',
           required: true,
+          admin: {
+            description: 'Select or upload an image',
+          },
         },
       ],
     },
