@@ -1,0 +1,184 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-gray-200;
+  }
+
+  .dark * {
+    @apply border-zinc-800;
+  }
+
+  body {
+    @apply bg-background-light text-gray-900 font-sans transition-colors duration-300;
+  }
+
+  .dark body {
+    @apply bg-background-dark text-gray-100;
+  }
+
+  h1, h2, h3, h4, h5, h6, .font-display {
+    font-family: 'Playfair Display', var(--font-playfair), serif;
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 bg-primary text-white py-4 px-8 text-xs tracking-[0.3em] uppercase font-bold transition-all duration-300 hover:bg-gold;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 bg-transparent border border-gray-300 dark:border-zinc-700 py-4 px-8 text-xs tracking-[0.3em] uppercase font-bold transition-all duration-300 hover:bg-gold hover:border-gold hover:text-white;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 border border-gold bg-transparent px-6 py-3 text-xs tracking-[0.2em] uppercase font-semibold text-gold transition-all duration-300 hover:bg-gold hover:text-white;
+  }
+
+  .section-heading {
+    @apply font-display text-3xl sm:text-4xl lg:text-5xl tracking-tight;
+  }
+
+  .section-subheading {
+    @apply text-xs uppercase tracking-[0.4em] text-gold;
+  }
+
+  .card {
+    @apply overflow-hidden bg-white dark:bg-zinc-900 border border-gray-100 dark:border-zinc-800 transition-all duration-300;
+  }
+
+  .card:hover {
+    @apply border-gold/30;
+  }
+
+  .input-field {
+    @apply w-full border-none bg-zinc-900 px-4 py-3 text-xs text-white placeholder-gray-500 focus:ring-1 focus:ring-gold focus:outline-none;
+  }
+
+  .link-gold {
+    @apply text-gold font-semibold underline cursor-pointer transition-colors hover:text-white;
+  }
+
+  /* Top utility bar */
+  .utility-bar {
+    @apply bg-black text-[10px] uppercase tracking-widest py-2 px-6 flex justify-between items-center text-gray-400 border-b border-gray-800;
+  }
+
+  /* Navigation link styles */
+  .nav-link {
+    @apply text-[11px] font-semibold tracking-widest text-gray-300 uppercase transition-colors hover:text-gold;
+  }
+
+  .nav-link-active {
+    @apply text-white border-b border-gold pb-1;
+  }
+
+  /* Breadcrumb styles */
+  .breadcrumb {
+    @apply bg-gray-50 dark:bg-zinc-900 py-3 px-8 border-b border-gray-100 dark:border-zinc-800;
+  }
+
+  .breadcrumb-text {
+    @apply text-[10px] uppercase tracking-[0.2em] text-gray-500;
+  }
+
+  /* Section label */
+  .section-label {
+    @apply text-xs uppercase tracking-[0.3em] font-bold text-gray-400 mb-4;
+  }
+
+  /* Gold bullet list */
+  .gold-bullet {
+    @apply w-1.5 h-1.5 bg-gold rounded-full;
+  }
+
+  /* Brand reel scrollbar */
+  .brand-reel::-webkit-scrollbar {
+    height: 2px;
+  }
+
+  .brand-reel::-webkit-scrollbar-track {
+    @apply bg-gray-100;
+  }
+
+  .brand-reel::-webkit-scrollbar-thumb {
+    @apply bg-gold;
+  }
+
+  .dark .brand-reel::-webkit-scrollbar-track {
+    @apply bg-zinc-900;
+  }
+
+  /* Grayscale hover effect */
+  .grayscale-hover {
+    @apply grayscale transition-all duration-500 cursor-pointer;
+  }
+
+  .grayscale-hover:hover {
+    @apply grayscale-0;
+  }
+}
+
+@layer utilities {
+  .text-gradient-gold {
+    @apply bg-gradient-to-r from-gold to-yellow-600 bg-clip-text text-transparent;
+  }
+
+  .animate-in {
+    animation: fadeInUp 0.5s ease-out forwards;
+  }
+
+  .animate-in-delay-1 {
+    animation: fadeInUp 0.5s ease-out 0.1s forwards;
+    opacity: 0;
+  }
+
+  .animate-in-delay-2 {
+    animation: fadeInUp 0.5s ease-out 0.2s forwards;
+    opacity: 0;
+  }
+
+  .animate-in-delay-3 {
+    animation: fadeInUp 0.5s ease-out 0.3s forwards;
+    opacity: 0;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c5a059;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #b8934d;
+}
+
+/* Selection color */
+::selection {
+  background-color: rgba(197, 160, 89, 0.3);
+  color: #1a1a1a;
+}
+
+.dark ::selection {
+  background-color: rgba(197, 160, 89, 0.3);
+  color: #ffffff;
+}

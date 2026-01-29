@@ -1,0 +1,48 @@
+{
+  "name": "the-shoppes-nb",
+  "version": "1.0.0",
+  "description": "The Shoppes at New Brunswick website",
+  "type": "module",
+  "scripts": {
+    "dev": "cross-env NODE_OPTIONS=\"--no-deprecation\" next dev",
+    "build": "cross-env NODE_OPTIONS=\"--no-deprecation\" next build",
+    "start": "cross-env NODE_OPTIONS=\"--no-deprecation\" next start",
+    "lint": "next lint",
+    "typecheck:all": "tsc --noEmit",
+    "generate:types": "payload generate:types",
+    "generate:importmap": "payload generate:importmap",
+    "seed": "cross-env NODE_OPTIONS=\"--no-deprecation --import=tsx\" node scripts/seed.ts",
+    "import-images": "cross-env NODE_OPTIONS=\"--no-deprecation --import=tsx\" node scripts/import-images.ts",
+    "download-images": "cross-env NODE_OPTIONS=\"--no-deprecation --import=tsx\" node scripts/download-and-upload-images.ts"
+  },
+  "dependencies": {
+    "@payloadcms/db-postgres": "^3.0.0",
+    "@payloadcms/next": "^3.0.0",
+    "@payloadcms/richtext-lexical": "^3.0.0",
+    "@payloadcms/storage-s3": "3.72.0",
+    "dotenv": "^17.2.3",
+    "framer-motion": "^12.29.2",
+    "graphql": "^16.9.0",
+    "lucide-react": "^0.563.0",
+    "next": "^15.0.0",
+    "payload": "^3.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "resend": "^4.0.0",
+    "sharp": "^0.33.5"
+  },
+  "devDependencies": {
+    "@aws-sdk/client-s3": "^3.978.0",
+    "@types/node": "^22.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "autoprefixer": "^10.4.20",
+    "cross-env": "^7.0.3",
+    "eslint": "^9.0.0",
+    "eslint-config-next": "^15.0.0",
+    "postcss": "^8.4.47",
+    "tailwindcss": "^3.4.14",
+    "tsx": "^4.21.0",
+    "typescript": "^5.6.3"
+  }
+}
