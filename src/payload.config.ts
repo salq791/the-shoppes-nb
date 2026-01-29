@@ -21,14 +21,16 @@ const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
 
 const serverURL =
-  process.env.NEXT_PUBLIC_SERVER_URL ||
-  process.env.URL ||
-  process.env.DEPLOY_URL ||
-  'http://localhost:3000'
+  process.env.NEXT_PUBLIC_SERVER_URL || process.env.URL || process.env.DEPLOY_URL || ''
 
 const allowedOrigins = Array.from(
   new Set(
-    [serverURL, process.env.PAYLOAD_ALLOWED_ORIGINS]
+    [
+      process.env.NEXT_PUBLIC_SERVER_URL,
+      process.env.URL,
+      process.env.DEPLOY_URL,
+      process.env.PAYLOAD_ALLOWED_ORIGINS,
+    ]
       .filter(Boolean)
       .flatMap((value) =>
         (value || '')
