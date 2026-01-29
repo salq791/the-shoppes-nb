@@ -7,6 +7,12 @@ export const Users: CollectionConfig = {
     defaultColumns: ['email', 'role', 'createdAt'],
   },
   auth: true,
+  access: {
+    read: ({ req: { user } }) => !!user,
+    create: ({ req: { user } }) => user?.role === 'admin',
+    update: ({ req: { user } }) => !!user,
+    delete: ({ req: { user } }) => user?.role === 'admin',
+  },
   fields: [
     {
       name: 'role',
