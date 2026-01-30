@@ -23,7 +23,7 @@ const navigation = [
   { name: 'Directory', href: '/directory' },
   { name: 'News & Events', href: '/news' },
   { name: 'Photo Gallery', href: '/gallery' },
-  { name: 'Information', href: '/contact' },
+  { name: 'Contact Us', href: '/contact' },
   { name: 'Leasing Opportunity', href: '/leasing' },
 ]
 
