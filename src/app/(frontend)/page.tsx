@@ -90,43 +90,47 @@ export default async function HomePage() {
       <HeroCarousel />
 
       {/* Category Blocks */}
-      <section className="py-20 bg-white dark:bg-background-dark">
-        <div className="max-w-7xl mx-auto px-8">
-          <div className="text-center mb-16">
-            <span className="text-sm uppercase tracking-[0.4em] font-semibold" style={{ color: 'rgb(161, 65, 59)' }}>Explore Our Boutiques</span>
+      <section className="py-20 bg-gradient-to-b from-gray-50 to-white dark:from-zinc-900 dark:to-background-dark">
+        <div className="max-w-6xl mx-auto px-8">
+          <div className="text-center mb-12">
+            <span className="text-sm uppercase tracking-[0.4em] font-semibold text-[#a1413b]">Explore Our Boutiques</span>
             <h2 className="section-heading mt-2">Shop by Category</h2>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
             {categories.map((category: any) => (
               <Link
                 key={category.id}
                 href={`/category/${category.slug}`}
-                className="group text-center"
+                className="group"
               >
-                <div className="aspect-square bg-gray-50 dark:bg-zinc-900 border border-gray-100 dark:border-zinc-800 flex items-center justify-center mb-4 transition-all group-hover:border-[#a1413b]">
-                  {category.image && typeof category.image === 'object' ? (
-                    <Image
-                      src={category.image.url || ''}
-                      alt={category.name}
-                      width={120}
-                      height={120}
-                      className="w-20 h-20 object-contain grayscale group-hover:grayscale-0 transition-all duration-500"
-                    />
-                  ) : (
-                    <span className="material-icons text-4xl text-gray-300 group-hover:text-[#a1413b] transition-colors">
-                      {category.slug === 'apparel' ? 'checkroom' :
-                       category.slug === 'eat-drink' ? 'restaurant' :
-                       category.slug === 'specialty' ? 'diamond' :
-                       category.slug === 'for-kids' ? 'child_care' :
-                       'store'}
-                    </span>
-                  )}
+                <div className="relative bg-white dark:bg-zinc-800 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100 dark:border-zinc-700 group-hover:border-[#a1413b] group-hover:-translate-y-1">
+                  <div className="aspect-[4/3] flex items-center justify-center bg-gradient-to-br from-gray-50 to-gray-100 dark:from-zinc-800 dark:to-zinc-900">
+                    {category.image && typeof category.image === 'object' ? (
+                      <Image
+                        src={category.image.url || ''}
+                        alt={category.name}
+                        width={120}
+                        height={120}
+                        className="w-16 h-16 object-contain"
+                      />
+                    ) : (
+                      <span className="material-icons text-6xl text-[#a1413b]/70 group-hover:text-[#a1413b] group-hover:scale-110 transition-all duration-300">
+                        {category.slug === 'apparel' ? 'checkroom' :
+                         category.slug === 'eat-drink' ? 'restaurant' :
+                         category.slug === 'specialty' ? 'diamond' :
+                         category.slug === 'for-kids' ? 'child_care' :
+                         'store'}
+                      </span>
+                    )}
+                  </div>
+                  <div className="p-4 text-center">
+                    <h3 className="text-sm font-bold uppercase tracking-wide text-gray-800 dark:text-white group-hover:text-[#a1413b] transition-colors">
+                      {category.name}
+                    </h3>
+                    <p className="text-xs text-gray-500 mt-1 font-medium">{category.tenantCount} Stores</p>
+                  </div>
                 </div>
-                <h3 className="text-xs uppercase tracking-[0.2em] font-semibold group-hover:text-[#a1413b] transition-colors">
-                  {category.name}
-                </h3>
-                <p className="text-[10px] text-gray-500 mt-1">{category.tenantCount} Stores</p>
               </Link>
             ))}
           </div>
@@ -204,23 +208,23 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* Upcoming Events */}
-      <section className="py-20 bg-white dark:bg-background-dark">
-        <div className="max-w-7xl mx-auto px-8">
-          <div className="flex justify-between items-end mb-12">
-            <div>
-              <span className="section-subheading">Mark Your Calendar</span>
-              <h2 className="section-heading mt-2">Upcoming Events</h2>
+      {/* Upcoming Events - Only show if there are events */}
+      {upcomingEvents.length > 0 && (
+        <section className="py-20 bg-white dark:bg-background-dark">
+          <div className="max-w-7xl mx-auto px-8">
+            <div className="flex justify-between items-end mb-12">
+              <div>
+                <span className="section-subheading">Mark Your Calendar</span>
+                <h2 className="section-heading mt-2">Upcoming Events</h2>
+              </div>
+              <Link href="/events" className="btn-outline hidden sm:flex">
+                View All
+                <span className="material-icons text-sm">arrow_forward</span>
+              </Link>
             </div>
-            <Link href="/events" className="btn-outline hidden sm:flex">
-              View All
-              <span className="material-icons text-sm">arrow_forward</span>
-            </Link>
-          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {upcomingEvents.length > 0 ? (
-              upcomingEvents.map((event: any) => (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {upcomingEvents.map((event: any) => (
                 <Link
                   key={event.id}
                   href={`/events/${event.slug}`}
@@ -263,35 +267,29 @@ export default async function HomePage() {
                     )}
                   </div>
                 </Link>
-              ))
-            ) : (
-              <div className="col-span-3 text-center py-16">
-                <span className="material-icons text-4xl text-gray-300 mb-4">event</span>
-                <p className="text-gray-500">No upcoming events at this time</p>
-                <p className="text-xs text-gray-400 mt-1">Check back soon for exciting happenings</p>
-              </div>
-            )}
-          </div>
-        </div>
-      </section>
-
-      {/* Latest News */}
-      <section className="py-20 bg-gray-50 dark:bg-zinc-900">
-        <div className="max-w-7xl mx-auto px-8">
-          <div className="flex justify-between items-end mb-12">
-            <div>
-              <span className="section-subheading">Stay Informed</span>
-              <h2 className="section-heading mt-2">Latest News</h2>
+              ))}
             </div>
-            <Link href="/news" className="btn-outline hidden sm:flex">
-              View All
-              <span className="material-icons text-sm">arrow_forward</span>
-            </Link>
           </div>
+        </section>
+      )}
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {latestNews.length > 0 ? (
-              latestNews.map((post: any) => (
+      {/* Latest News - Only show if there are news posts */}
+      {latestNews.length > 0 && (
+        <section className="py-20 bg-gray-50 dark:bg-zinc-900">
+          <div className="max-w-7xl mx-auto px-8">
+            <div className="flex justify-between items-end mb-12">
+              <div>
+                <span className="section-subheading">Stay Informed</span>
+                <h2 className="section-heading mt-2">Latest News</h2>
+              </div>
+              <Link href="/news" className="btn-outline hidden sm:flex">
+                View All
+                <span className="material-icons text-sm">arrow_forward</span>
+              </Link>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {latestNews.map((post: any) => (
                 <Link
                   key={post.id}
                   href={`/news/${post.slug}`}
@@ -337,17 +335,11 @@ export default async function HomePage() {
                     </span>
                   </div>
                 </Link>
-              ))
-            ) : (
-              <div className="col-span-3 text-center py-16">
-                <span className="material-icons text-4xl text-gray-300 mb-4">article</span>
-                <p className="text-gray-500">No news posts yet</p>
-                <p className="text-xs text-gray-400 mt-1">Check back soon for updates</p>
-              </div>
-            )}
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* Newsletter Signup */}
       <section className="py-20 bg-black text-white">
