@@ -25,8 +25,8 @@ export default async function ContactPage() {
         />
         <div className="absolute inset-0 bg-black/40" />
         <div className="absolute inset-0 flex items-center justify-center">
-          <div className="text-center text-white">
-            <h1 className="text-5xl md:text-6xl font-display mb-4">Contact Us</h1>
+          <div className="text-center text-white bg-black/50 backdrop-blur-sm px-12 py-8 rounded-full">
+            <h1 className="text-5xl md:text-6xl font-display mb-2">Contact Us</h1>
             <p className="text-sm tracking-[0.5em] uppercase font-light">Get in Touch</p>
           </div>
         </div>
