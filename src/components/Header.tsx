@@ -451,7 +451,7 @@ export function Header() {
                     </div>
                     <div className="flex items-center gap-3">
                       <span className="material-icons text-[#a1413b] text-sm">phone</span>
-                      <span>(732) 555-1234</span>
+                      <span>1-908-274-0530</span>
                     </div>
                   </div>
                 </div>

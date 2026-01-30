@@ -138,7 +138,7 @@ export default async function CategoryPage({ params }: Props) {
                         alt={tenant.logo.alt || tenant.name}
                         width={200}
                         height={200}
-                        className="max-h-full max-w-full object-contain grayscale group-hover:grayscale-0 transition-all duration-500"
+                        className="max-h-full max-w-full object-contain"
                       />
                     ) : (
                       <span className="text-5xl font-display text-gray-200 group-hover:text-[#a1413b] transition-colors">
