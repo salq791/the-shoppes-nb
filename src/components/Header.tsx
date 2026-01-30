@@ -164,38 +164,39 @@ export function Header() {
       </div>
 
       {/* Main header */}
-      <header className="bg-black py-4 sticky top-0 z-50">
-        <div className="w-full px-6 xl:px-12 flex items-center">
-          {/* Logo - fixed width area */}
-          <Link href="/" className="flex-shrink-0 group py-2">
-            {logoUrl ? (
-              <Image
-                src={logoUrl}
-                alt="The Shoppes at North Brunswick"
-                width={380}
-                height={112}
-                className="h-24 xl:h-28 w-auto object-contain mix-blend-lighten"
-                priority
-              />
-            ) : logoLoaded ? (
-              <div className="flex flex-col">
-                <span className="text-white text-lg xl:text-xl font-display tracking-[0.2em] leading-tight">
-                  THE SHOPPES <span className="text-[#a1413b] italic">at</span>
-                </span>
-                <span className="text-white text-xs xl:text-sm tracking-[0.4em] font-light border-t border-gray-700 mt-1 pt-1">
-                  NORTH BRUNSWICK
-                </span>
-              </div>
-            ) : null}
-          </Link>
+      <header className="bg-black py-4 sticky top-0 z-50 overflow-hidden">
+        <div className="w-full px-4 lg:px-6 xl:px-12 flex items-center justify-between">
+          {/* Logo - centered area */}
+          <div className="flex-shrink-0 xl:pl-[8%] 2xl:pl-[12%]">
+            <Link href="/" className="group py-2 block">
+              {logoUrl ? (
+                <Image
+                  src={logoUrl}
+                  alt="The Shoppes at North Brunswick"
+                  width={380}
+                  height={112}
+                  className="h-24 xl:h-28 w-auto object-contain mix-blend-lighten"
+                  priority
+                />
+              ) : logoLoaded ? (
+                <div className="flex flex-col">
+                  <span className="text-white text-lg xl:text-xl font-display tracking-[0.2em] leading-tight">
+                    THE SHOPPES <span className="text-[#a1413b] italic">at</span>
+                  </span>
+                  <span className="text-white text-xs xl:text-sm tracking-[0.4em] font-light border-t border-gray-700 mt-1 pt-1">
+                    NORTH BRUNSWICK
+                  </span>
+                </div>
+              ) : null}
+            </Link>
+          </div>
 
-          {/* Spacer with subtle separator */}
-          <div className="hidden lg:flex flex-1 justify-end items-center ml-8 xl:ml-16">
+          {/* Desktop navigation */}
+          <div className="hidden lg:flex items-center flex-shrink-0">
             {/* Decorative line */}
-            <div className="w-px h-8 bg-gradient-to-b from-transparent via-gray-700 to-transparent mr-8 xl:mr-12" />
+            <div className="w-px h-8 bg-gradient-to-b from-transparent via-gray-700 to-transparent mr-4 xl:mr-8" />
 
-            {/* Desktop navigation */}
-            <nav className="flex items-center gap-5 xl:gap-7">
+            <nav className="flex items-center gap-3 lg:gap-4 xl:gap-6">
               {navigation.map((item) => (
                 <Link
                   key={item.name}
@@ -217,7 +218,7 @@ export function Header() {
           {/* Mobile menu button */}
           <button
             type="button"
-            className="lg:hidden text-white ml-auto"
+            className="lg:hidden text-white"
             onClick={() => setMobileMenuOpen(true)}
           >
             <Menu className="h-6 w-6" />
