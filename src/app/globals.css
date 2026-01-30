@@ -93,7 +93,8 @@
 
   /* Navigation link styles */
   .nav-link {
-    @apply text-[13px] font-bold tracking-wide text-white uppercase transition-all duration-200 relative;
+    @apply text-[14px] font-semibold tracking-wider text-white uppercase transition-all duration-200 relative;
+    font-family: 'Playfair Display', var(--font-playfair), serif;
   }
 
   .nav-link:hover {

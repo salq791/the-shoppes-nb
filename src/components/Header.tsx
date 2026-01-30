@@ -426,7 +426,7 @@ export function Header() {
                     <Link
                       key={item.name}
                       href={item.href}
-                      className={`block px-4 py-3 text-[11px] font-semibold tracking-widest uppercase ${
+                      className={`block px-4 py-3 text-sm font-display font-semibold tracking-widest uppercase ${
                         isActive(item.href)
                           ? 'text-white border-l-2 border-[#a1413b]'
                           : 'text-gray-400 hover:text-white'
