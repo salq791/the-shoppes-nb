@@ -126,7 +126,7 @@ export default async function TenantPage({ params }: Props) {
                       alt={photo.image.alt || `${tenant.name} photo ${index + 1}`}
                       width={300}
                       height={300}
-                      className="h-full w-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                      className="h-full w-full object-cover"
                     />
                   </div>
                 )
@@ -252,7 +252,7 @@ export default async function TenantPage({ params }: Props) {
                         alt={related.logo.alt || related.name}
                         width={150}
                         height={150}
-                        className="max-h-full max-w-full object-contain grayscale group-hover:grayscale-0 transition-all duration-500"
+                        className="max-h-full max-w-full object-contain"
                       />
                     ) : (
                       <span className="text-4xl font-display text-gray-200 group-hover:text-[#a1413b] transition-colors">

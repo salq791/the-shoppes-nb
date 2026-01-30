@@ -145,7 +145,7 @@ export default async function EventsPage() {
                         src={event.image.url || ''}
                         alt={event.image.alt || event.title}
                         fill
-                        className="object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                        className="object-cover"
                       />
                     ) : (
                       <div className="absolute inset-0 flex items-center justify-center">
