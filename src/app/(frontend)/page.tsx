@@ -165,7 +165,7 @@ export default async function HomePage() {
                         src={tenant.logo.url || ''}
                         alt={tenant.logo.alt || tenant.name}
                         fill
-                        className="object-contain p-8 grayscale group-hover:grayscale-0 transition-all duration-500"
+                        className="object-contain p-8"
                       />
                     ) : (
                       <div className="absolute inset-0 flex items-center justify-center">
