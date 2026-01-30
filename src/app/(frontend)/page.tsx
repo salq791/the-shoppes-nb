@@ -125,10 +125,10 @@ export default async function HomePage() {
                     )}
                   </div>
                   <div className="p-4 text-center">
-                    <h3 className="text-sm font-bold uppercase tracking-wide text-gray-800 dark:text-white group-hover:text-[#a1413b] transition-colors">
+                    <h3 className="text-sm font-bold uppercase tracking-wide text-gray-900 dark:text-white group-hover:text-[#a1413b] transition-colors">
                       {category.name}
                     </h3>
-                    <p className="text-xs text-gray-500 mt-1 font-medium">{category.tenantCount} Stores</p>
+                    <p className="text-xs text-gray-600 mt-1 font-medium">{category.tenantCount} Stores</p>
                   </div>
                 </div>
               </Link>

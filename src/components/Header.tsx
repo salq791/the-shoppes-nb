@@ -173,8 +173,8 @@ export function Header() {
                 src={logoUrl}
                 alt="The Shoppes at North Brunswick"
                 width={380}
-                height={100}
-                className="h-20 xl:h-24 w-auto object-contain mix-blend-lighten"
+                height={112}
+                className="h-24 xl:h-28 w-auto object-contain mix-blend-lighten"
                 priority
               />
             ) : logoLoaded ? (

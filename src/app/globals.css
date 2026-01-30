@@ -93,12 +93,15 @@
 
   /* Navigation link styles */
   .nav-link {
-    @apply text-[17px] font-normal tracking-wide text-white transition-all duration-200 relative;
+    @apply text-[17px] tracking-wide transition-all duration-200 relative;
+    color: #ffffff;
+    font-weight: 500;
     font-family: 'Playfair Display', var(--font-playfair), serif;
   }
 
   .nav-link:hover {
     color: #a1413b;
+    font-weight: 600;
   }
 
   .nav-link::after {
@@ -113,6 +116,7 @@
 
   .nav-link-active {
     color: #a1413b;
+    font-weight: 600;
   }
 
   .nav-link-active::after {

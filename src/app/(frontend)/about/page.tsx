@@ -44,11 +44,11 @@ export default async function AboutPage() {
       <section className="py-20 bg-white dark:bg-background-dark">
         <div className="max-w-4xl mx-auto px-8">
           <div className="text-center mb-16">
-            <span className="section-subheading">Welcome</span>
+            <span className="text-sm uppercase tracking-[0.4em] font-bold text-[#a1413b]">Welcome</span>
             <h2 className="section-heading mt-2">The Shoppes at North Brunswick</h2>
           </div>
 
-          <div className="space-y-8 text-gray-600 dark:text-gray-400 leading-relaxed">
+          <div className="space-y-8 text-gray-900 dark:text-gray-200 leading-relaxed">
             <p className="text-lg italic font-display text-center border-l-4 border-[#a1413b] pl-6">
               &ldquo;Experience the pinnacle of shopping elegance. The Shoppes at North Brunswick brings together
               the finest retailers, dining destinations, and services to create a premier neighborhood destination.&rdquo;
@@ -56,7 +56,7 @@ export default async function AboutPage() {
 
             <div className="grid md:grid-cols-2 gap-12 mt-16">
               <div>
-                <h3 className="text-xl font-display mb-4 text-[#a1413b] italic">Our Vision</h3>
+                <h3 className="text-2xl font-display mb-4 text-[#c4413b] font-semibold">Our Vision</h3>
                 <p>
                   The Shoppes at North Brunswick was established with a vision to create more than just a shopping center.
                   We wanted to build a place where families come together, where local businesses thrive,
@@ -64,7 +64,7 @@ export default async function AboutPage() {
                 </p>
               </div>
               <div>
-                <h3 className="text-xl font-display mb-4 text-[#a1413b] italic">Our Promise</h3>
+                <h3 className="text-2xl font-display mb-4 text-[#c4413b] font-semibold">Our Promise</h3>
                 <p>
                   We are committed to providing an exceptional shopping experience with a carefully curated selection
                   of retailers, restaurants, and services that cater to the diverse needs of our community.
@@ -114,25 +114,19 @@ export default async function AboutPage() {
         <div className="max-w-4xl mx-auto px-8">
           <div className="grid md:grid-cols-2 gap-8">
             <div className="bg-white dark:bg-zinc-800 border border-gray-100 dark:border-zinc-700 p-8">
-              <h3 className="text-xs uppercase tracking-[0.3em] font-bold text-gray-400 mb-6 border-b border-gray-200 dark:border-zinc-700 pb-4">
+              <h3 className="text-xs uppercase tracking-[0.3em] font-bold text-gray-900 dark:text-white mb-6 border-b border-gray-200 dark:border-zinc-700 pb-4">
                 Visit Us
               </h3>
-              {settings.address && (
-                <p className="text-sm mb-4">{settings.address}</p>
-              )}
-              {settings.hours && (
-                <div>
-                  <p className="text-xs uppercase tracking-wider text-[#a1413b] mb-2">Hours</p>
-                  <p className="text-sm whitespace-pre-line">{settings.hours}</p>
-                </div>
+              {settings.address && typeof settings.address === 'string' && (
+                <p className="text-sm text-gray-900 dark:text-gray-200">{settings.address.replace(/\n/g, ', ')}</p>
               )}
             </div>
 
             <div className="bg-white dark:bg-zinc-800 border border-gray-100 dark:border-zinc-700 p-8">
-              <h3 className="text-xs uppercase tracking-[0.3em] font-bold text-gray-400 mb-6 border-b border-gray-200 dark:border-zinc-700 pb-4">
+              <h3 className="text-xs uppercase tracking-[0.3em] font-bold text-gray-900 dark:text-white mb-6 border-b border-gray-200 dark:border-zinc-700 pb-4">
                 Contact Us
               </h3>
-              <p className="text-lg font-display mb-4">
+              <p className="text-lg font-display mb-4 text-gray-900 dark:text-white">
                 <a href="tel:1-908-274-0530" className="hover:text-[#a1413b] transition-colors">
                   1-908-274-0530
                 </a>
