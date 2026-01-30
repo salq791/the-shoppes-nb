@@ -28,7 +28,7 @@ const slides: Slide[] = [
     description: 'Your neighborhood shopping destination featuring dining, retail, and services for the whole family.',
     cta: { text: 'Explore Directory', href: '/directory' },
     secondaryCta: { text: 'Get Directions', href: '/contact' },
-    image: 'https://pub-fd2ebfacd1a646a9935b8836eea536cf.r2.dev/media/hero/hero-jamba-juice.jpg',
+    image: 'https://pub-fd2ebfacd1a646a9935b8836eea536cf.r2.dev/media/hero/hero-shoppes-overview.jpg',
   },
   {
     id: 2,
@@ -37,7 +37,7 @@ const slides: Slide[] = [
     description: 'From fashion to food, find everything you need at The Shoppes at North Brunswick.',
     cta: { text: 'View All Stores', href: '/directory' },
     secondaryCta: { text: 'Shop by Category', href: '/directory' },
-    image: 'https://pub-fd2ebfacd1a646a9935b8836eea536cf.r2.dev/media/hero/hero-shoppes-overview.jpg',
+    image: 'https://pub-fd2ebfacd1a646a9935b8836eea536cf.r2.dev/media/hero/hero-jamba-juice.jpg',
   },
   {
     id: 3,
@@ -70,6 +70,11 @@ const slides: Slide[] = [
 
 export function HeroCarousel() {
   const [currentSlide, setCurrentSlide] = useState(0)
+  const [autoPlayKey, setAutoPlayKey] = useState(0)
+
+  const resetAutoPlay = useCallback(() => {
+    setAutoPlayKey((prev) => prev + 1)
+  }, [])
 
   const nextSlide = useCallback(() => {
     setCurrentSlide((prev) => (prev + 1) % slides.length)
@@ -81,12 +86,23 @@ export function HeroCarousel() {
 
   const goToSlide = (index: number) => {
     setCurrentSlide(index)
+    resetAutoPlay()
   }
+
+  const handleNext = useCallback(() => {
+    nextSlide()
+    resetAutoPlay()
+  }, [nextSlide, resetAutoPlay])
+
+  const handlePrev = useCallback(() => {
+    prevSlide()
+    resetAutoPlay()
+  }, [prevSlide, resetAutoPlay])
 
   useEffect(() => {
     const timer = setInterval(nextSlide, 6000)
     return () => clearInterval(timer)
-  }, [nextSlide])
+  }, [nextSlide, autoPlayKey])
 
   const slide = slides[currentSlide]
 
@@ -146,14 +162,14 @@ export function HeroCarousel() {
 
       {/* Navigation arrows */}
       <button
-        onClick={prevSlide}
+        onClick={handlePrev}
         className="absolute left-4 lg:left-8 top-1/2 -translate-y-1/2 z-20 w-10 h-10 border border-white/30 flex items-center justify-center text-white/70 hover:bg-[#a1413b] hover:border-[#a1413b] hover:text-white transition-all"
         aria-label="Previous slide"
       >
         <span className="material-icons text-sm">chevron_left</span>
       </button>
       <button
-        onClick={nextSlide}
+        onClick={handleNext}
         className="absolute right-4 lg:right-8 top-1/2 -translate-y-1/2 z-20 w-10 h-10 border border-white/30 flex items-center justify-center text-white/70 hover:bg-[#a1413b] hover:border-[#a1413b] hover:text-white transition-all"
         aria-label="Next slide"
       >
