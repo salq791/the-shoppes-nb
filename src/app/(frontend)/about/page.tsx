@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { getPayloadClient } from '@/lib/payload'
+import { PageHero } from '@/components/PageHero'
 
 export const revalidate = 60
 
@@ -16,20 +17,11 @@ export default async function AboutPage() {
 
   return (
     <div>
-      {/* Hero Section */}
-      <section className="relative h-[40vh] min-h-[300px] overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: 'url(https://pub-fd2ebfacd1a646a9935b8836eea536cf.r2.dev/media/hero/hero-about-fountain.jpg)' }}
-        />
-        <div className="absolute inset-0 bg-black/40" />
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="text-center text-white bg-black/50 backdrop-blur-sm px-12 py-8 rounded-full">
-            <h1 className="text-5xl md:text-6xl font-display mb-2">About Us</h1>
-            <p className="text-sm tracking-[0.5em] uppercase font-light">Our Story</p>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        image="https://pub-fd2ebfacd1a646a9935b8836eea536cf.r2.dev/media/hero/hero-about-fountain.jpg"
+        title="About Us"
+        subtitle="Our Story"
+      />
 
       {/* Breadcrumb */}
       <div className="breadcrumb">

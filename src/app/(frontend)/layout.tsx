@@ -3,6 +3,7 @@ import { Playfair_Display, Montserrat } from 'next/font/google'
 import '../globals.css'
 import { Header } from '@/components/Header'
 import { Footer } from '@/components/Footer'
+import { MaterialIcons } from '@/components/MaterialIcons'
 
 const playfair = Playfair_Display({
   subsets: ['latin'],
@@ -45,11 +46,6 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         {/* Preconnect to Cloudflare R2 for hero images */}
         <link rel="preconnect" href="https://pub-fd2ebfacd1a646a9935b8836eea536cf.r2.dev" />
-        {/* Material Icons with font-display swap */}
-        <link
-          href="https://fonts.googleapis.com/icon?family=Material+Icons&display=swap"
-          rel="stylesheet"
-        />
         {/* Preload LCP hero image */}
         <link
           rel="preload"
@@ -59,6 +55,7 @@ export default function RootLayout({
         />
       </head>
       <body className={`${playfair.variable} ${montserrat.variable} font-sans antialiased`} suppressHydrationWarning>
+        <MaterialIcons />
         <Header />
         <main className="min-h-screen">{children}</main>
         <Footer />

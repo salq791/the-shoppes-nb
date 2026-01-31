@@ -2,6 +2,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { notFound } from 'next/navigation'
 import { getPayloadClient } from '@/lib/payload'
+import { PageHero } from '@/components/PageHero'
 
 export const revalidate = 60
 
@@ -70,20 +71,11 @@ export default async function CategoryPage({ params }: Props) {
 
   return (
     <div>
-      {/* Hero Section */}
-      <section className="relative h-[40vh] min-h-[300px] overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1920&q=80)' }}
-        />
-        <div className="absolute inset-0 bg-black/40" />
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="text-center text-white bg-black/50 backdrop-blur-sm px-12 py-8 rounded-full">
-            <h1 className="text-5xl md:text-6xl font-display mb-2">{category.name}</h1>
-            <p className="text-sm tracking-[0.5em] uppercase font-light">Browse Collection</p>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        image="https://pub-fd2ebfacd1a646a9935b8836eea536cf.r2.dev/media/hero/hero-shoppes-overview.jpg"
+        title={category.name}
+        subtitle="Browse Collection"
+      />
 
       {/* Breadcrumb */}
       <div className="breadcrumb">
@@ -152,9 +144,9 @@ export default async function CategoryPage({ params }: Props) {
                     )}
                   </div>
                   <div className="py-4 text-center">
-                    <h3 className="text-xs uppercase tracking-[0.2em] font-semibold group-hover:text-[#a1413b] transition-colors">
+                    <h2 className="text-xs uppercase tracking-[0.2em] font-semibold group-hover:text-[#a1413b] transition-colors">
                       {tenant.name}
-                    </h3>
+                    </h2>
                     <p className="text-[10px] text-gray-500 mt-1">{category.name}</p>
                     {tenant.suiteNumber && (
                       <p className="text-[10px] text-gray-400 mt-1">Suite {tenant.suiteNumber}</p>
