@@ -3,6 +3,7 @@
 import { useState, useEffect, useCallback } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Link from 'next/link'
+import Image from 'next/image'
 
 interface Slide {
   id: number
@@ -118,9 +119,13 @@ export function HeroCarousel() {
           transition={{ duration: 0.7 }}
           className="absolute inset-0"
         >
-          <div
-            className="absolute inset-0 bg-cover bg-center"
-            style={{ backgroundImage: `url(${slide.image})` }}
+          <Image
+            src={slide.image}
+            alt={slide.title}
+            fill
+            priority={currentSlide === 0}
+            className="object-cover object-center"
+            sizes="100vw"
           />
           <div className="absolute inset-0 bg-black/40" />
         </motion.div>
@@ -177,15 +182,15 @@ export function HeroCarousel() {
       </button>
 
       {/* Dots navigation */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex items-center gap-3">
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex items-center gap-4">
         {slides.map((_, index) => (
           <button
             key={index}
             onClick={() => goToSlide(index)}
-            className={`w-2 h-2 transition-all duration-300 ${
+            className={`h-3 transition-all duration-300 ${
               index === currentSlide
-                ? 'w-8 bg-[#a1413b]'
-                : 'bg-white/50 hover:bg-white/80'
+                ? 'w-10 bg-[#a1413b]'
+                : 'w-3 bg-white/50 hover:bg-white/80'
             }`}
             aria-label={`Go to slide ${index + 1}`}
           />

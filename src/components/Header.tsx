@@ -218,8 +218,10 @@ export function Header() {
           {/* Mobile menu button */}
           <button
             type="button"
-            className="lg:hidden text-white"
+            className="lg:hidden text-white p-2"
             onClick={() => setMobileMenuOpen(true)}
+            aria-label="Open menu"
+            aria-expanded={mobileMenuOpen}
           >
             <Menu className="h-6 w-6" />
           </button>
@@ -399,8 +401,9 @@ export function Header() {
                 </Link>
                 <button
                   type="button"
-                  className="text-white"
+                  className="text-white p-2"
                   onClick={() => setMobileMenuOpen(false)}
+                  aria-label="Close menu"
                 >
                   <X className="h-6 w-6" />
                 </button>

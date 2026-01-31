@@ -40,9 +40,22 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        {/* Preconnect to Google Fonts for faster loading */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        {/* Preconnect to Cloudflare R2 for hero images */}
+        <link rel="preconnect" href="https://pub-fd2ebfacd1a646a9935b8836eea536cf.r2.dev" />
+        {/* Material Icons with font-display swap */}
         <link
-          href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          href="https://fonts.googleapis.com/icon?family=Material+Icons&display=swap"
           rel="stylesheet"
+        />
+        {/* Preload LCP hero image */}
+        <link
+          rel="preload"
+          as="image"
+          href="https://pub-fd2ebfacd1a646a9935b8836eea536cf.r2.dev/media/hero/hero-shoppes-overview.jpg"
+          fetchPriority="high"
         />
       </head>
       <body className={`${playfair.variable} ${montserrat.variable} font-sans antialiased`} suppressHydrationWarning>

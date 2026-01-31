@@ -66,9 +66,9 @@ export async function Footer() {
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
         {/* News & Events */}
         <div>
-          <h4 className="text-xs uppercase tracking-[0.3em] font-bold border-b border-gray-800 pb-4 mb-6">
+          <h3 className="text-xs uppercase tracking-[0.3em] font-bold border-b border-gray-800 pb-4 mb-6">
             News & Events
-          </h4>
+          </h3>
           {latestEvent ? (
             <Link href={`/events/${latestEvent.slug}`} className="flex gap-4 group">
               <div className="w-16 h-16 bg-zinc-800 flex-shrink-0 overflow-hidden">
@@ -87,7 +87,7 @@ export async function Footer() {
                 )}
               </div>
               <div>
-                <p className="text-[10px] text-gray-500 uppercase tracking-widest">
+                <p className="text-[10px] text-gray-400 uppercase tracking-widest">
                   {new Date(latestEvent.date).toLocaleDateString('en-US', {
                     month: 'short',
                     day: 'numeric',
@@ -100,15 +100,15 @@ export async function Footer() {
               </div>
             </Link>
           ) : (
-            <p className="text-xs text-gray-500">Check back for upcoming events</p>
+            <p className="text-xs text-gray-400">Check back for upcoming events</p>
           )}
         </div>
 
         {/* Directory */}
         <div>
-          <h4 className="text-xs uppercase tracking-[0.3em] font-bold border-b border-gray-800 pb-4 mb-6">
+          <h3 className="text-xs uppercase tracking-[0.3em] font-bold border-b border-gray-800 pb-4 mb-6">
             Directory
-          </h4>
+          </h3>
           <ul className="text-[11px] uppercase tracking-widest space-y-3 text-gray-400">
             {footerNavigation.directory.map((item) => (
               <li key={item.name}>
@@ -126,9 +126,9 @@ export async function Footer() {
 
         {/* Quick Links */}
         <div>
-          <h4 className="text-xs uppercase tracking-[0.3em] font-bold border-b border-gray-800 pb-4 mb-6">
+          <h3 className="text-xs uppercase tracking-[0.3em] font-bold border-b border-gray-800 pb-4 mb-6">
             Quick Links
-          </h4>
+          </h3>
           <ul className="text-[11px] uppercase tracking-widest space-y-3 text-gray-400">
             {footerNavigation.quickLinks.map((item) => (
               <li key={item.name}>
@@ -146,9 +146,9 @@ export async function Footer() {
 
         {/* Newsletter */}
         <div>
-          <h4 className="text-xs uppercase tracking-[0.3em] font-bold border-b border-gray-800 pb-4 mb-6">
+          <h3 className="text-xs uppercase tracking-[0.3em] font-bold border-b border-gray-800 pb-4 mb-6">
             Shoppes Insider
-          </h4>
+          </h3>
           <p className="text-xs text-gray-400 leading-relaxed mb-6">
             Join our exclusive circle for early access to seasonal sales, boutique launches, and VIP events.
           </p>
@@ -157,7 +157,7 @@ export async function Footer() {
       </div>
 
       {/* Bottom bar */}
-      <div className="max-w-7xl mx-auto mt-20 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center text-[10px] text-gray-600 tracking-widest uppercase">
+      <div className="max-w-7xl mx-auto mt-20 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center text-[10px] text-gray-400 tracking-widest uppercase">
         <p>&copy; {new Date().getFullYear()} The Shoppes at North Brunswick. All Rights Reserved.</p>
       </div>
     </footer>

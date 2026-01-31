@@ -344,7 +344,7 @@ export default async function HomePage() {
       {/* Newsletter Signup */}
       <section className="py-20 bg-black text-white">
         <div className="max-w-2xl mx-auto px-8 text-center">
-          <span className="text-xs uppercase tracking-[0.4em] text-[#a1413b]">Stay Connected</span>
+          <span className="text-xs uppercase tracking-[0.4em] text-[#c9625c]">Stay Connected</span>
           <h2 className="font-display text-3xl sm:text-4xl mt-4">
             Join the Shoppes Insider
           </h2>
@@ -354,7 +354,7 @@ export default async function HomePage() {
           <div className="mt-8 max-w-md mx-auto">
             <NewsletterForm variant="dark" />
           </div>
-          <p className="mt-4 text-[10px] text-gray-600 uppercase tracking-widest">
+          <p className="mt-4 text-[10px] text-gray-400 uppercase tracking-widest">
             We respect your privacy. Unsubscribe at any time.
           </p>
         </div>
