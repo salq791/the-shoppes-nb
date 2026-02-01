@@ -3,6 +3,12 @@
   "version": "1.0.0",
   "description": "The Shoppes at New Brunswick website",
   "type": "module",
+  "browserslist": [
+    "last 2 Chrome versions",
+    "last 2 Firefox versions",
+    "last 2 Safari versions",
+    "last 2 Edge versions"
+  ],
   "scripts": {
     "dev": "cross-env NODE_OPTIONS=\"--no-deprecation\" next dev",
     "build": "cross-env NODE_OPTIONS=\"--no-deprecation\" next build",
