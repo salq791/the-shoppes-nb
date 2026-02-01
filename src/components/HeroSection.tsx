@@ -1,5 +1,9 @@
 import Image from 'next/image'
-import { HeroCarousel } from './HeroCarousel'
+import dynamic from 'next/dynamic'
+
+const HeroCarousel = dynamic(() => import('./HeroCarousel').then((mod) => mod.HeroCarousel), {
+  ssr: false,
+})
 
 // Server component wrapper - ensures first image is in initial HTML with priority
 export function HeroSection() {
@@ -13,6 +17,7 @@ export function HeroSection() {
         alt="The Shoppes at North Brunswick"
         fill
         priority
+        quality={60}
         className="object-cover object-center"
         sizes="100vw"
         style={{ position: 'absolute', zIndex: -1 }}

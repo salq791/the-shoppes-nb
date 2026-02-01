@@ -44,15 +44,6 @@ export default function RootLayout({
         {/* Preconnect to Google Fonts for faster loading */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        {/* Preconnect to Cloudflare R2 for hero images */}
-        <link rel="preconnect" href="https://pub-fd2ebfacd1a646a9935b8836eea536cf.r2.dev" />
-        {/* Preload LCP hero image */}
-        <link
-          rel="preload"
-          as="image"
-          href="https://pub-fd2ebfacd1a646a9935b8836eea536cf.r2.dev/media/hero/hero-shoppes-overview.jpg"
-          fetchPriority="high"
-        />
       </head>
       <body className={`${playfair.variable} ${montserrat.variable} font-sans antialiased`} suppressHydrationWarning>
         <MaterialIcons />

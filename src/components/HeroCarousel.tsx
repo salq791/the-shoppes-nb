@@ -123,7 +123,6 @@ export function HeroCarousel() {
             src={slide.image}
             alt={slide.title}
             fill
-            priority={currentSlide === 0}
             className="object-cover object-center"
             sizes="100vw"
           />
