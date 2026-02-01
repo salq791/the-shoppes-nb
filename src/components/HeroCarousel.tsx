@@ -72,6 +72,7 @@ const slides: Slide[] = [
 export function HeroCarousel() {
   const [currentSlide, setCurrentSlide] = useState(0)
   const [autoPlayKey, setAutoPlayKey] = useState(0)
+  const isFirstSlide = currentSlide === 0
 
   const resetAutoPlay = useCallback(() => {
     setAutoPlayKey((prev) => prev + 1)
@@ -106,6 +107,7 @@ export function HeroCarousel() {
   }, [nextSlide, autoPlayKey])
 
   const slide = slides[currentSlide]
+  const slideAlt = `${slide.title} ${slide.subtitle}`.trim()
 
   return (
     <section className="relative h-full w-full overflow-hidden">
@@ -121,10 +123,13 @@ export function HeroCarousel() {
         >
           <Image
             src={slide.image}
-            alt={slide.title}
+            alt={slideAlt}
             fill
             className="object-cover object-center"
             sizes="100vw"
+            priority={isFirstSlide}
+            fetchPriority={isFirstSlide ? 'high' : 'auto'}
+            quality={55}
           />
           <div className="absolute inset-0 bg-black/40" />
         </motion.div>

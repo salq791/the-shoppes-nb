@@ -176,7 +176,7 @@ export function Header() {
                   width={380}
                   height={112}
                   className="h-24 xl:h-28 w-auto object-contain mix-blend-lighten"
-                  priority
+                  quality={60}
                 />
               ) : logoLoaded ? (
                 <div className="flex flex-col">
@@ -387,6 +387,7 @@ export function Header() {
                       width={280}
                       height={80}
                       className="h-20 w-auto object-contain mix-blend-lighten"
+                      quality={60}
                     />
                   ) : (
                     <>

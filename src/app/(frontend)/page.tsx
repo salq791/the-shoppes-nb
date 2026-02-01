@@ -113,6 +113,7 @@ export default async function HomePage() {
                         width={120}
                         height={120}
                         className="w-16 h-16 object-contain"
+                        quality={60}
                       />
                     ) : (
                       <span className="material-icons text-6xl text-[#a1413b]/70 group-hover:text-[#a1413b] group-hover:scale-110 transition-all duration-300">
@@ -167,6 +168,7 @@ export default async function HomePage() {
                         fill
                         className="object-contain p-8"
                         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                        quality={60}
                       />
                     ) : (
                       <div className="absolute inset-0 flex items-center justify-center">
@@ -239,6 +241,7 @@ export default async function HomePage() {
                         fill
                         className="object-cover transition-transform duration-500 group-hover:scale-105"
                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        quality={60}
                       />
                     ) : (
                       <div className="absolute inset-0 flex items-center justify-center">
@@ -305,6 +308,7 @@ export default async function HomePage() {
                         fill
                         className="object-cover transition-transform duration-500 group-hover:scale-105"
                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        quality={60}
                       />
                     ) : (
                       <div className="absolute inset-0 flex items-center justify-center">
