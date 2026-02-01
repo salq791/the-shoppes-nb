@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { getPayloadClient } from '@/lib/payload'
-import { HeroCarousel } from '@/components/HeroCarousel'
+import { HeroSection } from '@/components/HeroSection'
 import { NewsletterForm } from '@/components/NewsletterForm'
 
 export const revalidate = 60
@@ -87,7 +87,7 @@ export default async function HomePage() {
   return (
     <div>
       {/* Hero Carousel */}
-      <HeroCarousel />
+      <HeroSection />
 
       {/* Category Blocks */}
       <section className="py-20 bg-gradient-to-b from-gray-50 to-white dark:from-zinc-900 dark:to-background-dark">
