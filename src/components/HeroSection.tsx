@@ -1,9 +1,5 @@
 import Image from 'next/image'
-import dynamic from 'next/dynamic'
-
-const HeroCarousel = dynamic(() => import('./HeroCarousel').then((mod) => mod.HeroCarousel), {
-  ssr: false,
-})
+import { LazyHeroCarousel } from './LazyHeroCarousel'
 
 // Server component wrapper - ensures first image is in initial HTML with priority
 export function HeroSection() {
@@ -23,7 +19,7 @@ export function HeroSection() {
         style={{ position: 'absolute', zIndex: -1 }}
       />
       {/* Client: Interactive carousel */}
-      <HeroCarousel />
+      <LazyHeroCarousel />
     </div>
   )
 }
