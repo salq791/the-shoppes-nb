@@ -166,10 +166,11 @@ export default async function HomePage() {
                         alt={tenant.logo.alt || tenant.name}
                         fill
                         className="object-contain p-8"
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                       />
                     ) : (
                       <div className="absolute inset-0 flex items-center justify-center">
-                        <span className="text-5xl font-display text-gray-200">
+                        <span className="text-5xl font-display text-gray-500">
                           {tenant.name?.charAt(0)}
                         </span>
                       </div>
@@ -185,7 +186,7 @@ export default async function HomePage() {
                       {tenant.name}
                     </h3>
                     {tenant.category && typeof tenant.category === 'object' && (
-                      <p className="text-xs text-gray-500 uppercase tracking-wider mt-1">
+                      <p className="text-xs text-gray-600 uppercase tracking-wider mt-1">
                         {tenant.category.name}
                       </p>
                     )}
@@ -194,8 +195,8 @@ export default async function HomePage() {
               ))
             ) : (
               <div className="col-span-3 text-center py-16">
-                <span className="material-icons text-4xl text-gray-300 mb-4">storefront</span>
-                <p className="text-gray-500">Featured boutiques coming soon</p>
+                <span className="material-icons text-4xl text-gray-500 mb-4">storefront</span>
+                <p className="text-gray-600">Featured boutiques coming soon</p>
               </div>
             )}
           </div>
@@ -237,10 +238,11 @@ export default async function HomePage() {
                         alt={event.image.alt || event.title}
                         fill
                         className="object-cover transition-transform duration-500 group-hover:scale-105"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                       />
                     ) : (
                       <div className="absolute inset-0 flex items-center justify-center">
-                        <span className="material-icons text-4xl text-gray-300">event</span>
+                        <span className="material-icons text-4xl text-gray-500">event</span>
                       </div>
                     )}
                     <div className="absolute inset-0 bg-black/40" />
@@ -260,7 +262,7 @@ export default async function HomePage() {
                       {event.title}
                     </h3>
                     {event.startTime && (
-                      <p className="text-xs text-gray-500 mt-1">
+                      <p className="text-xs text-gray-600 mt-1">
                         {event.startTime}
                         {event.endTime && ` - ${event.endTime}`}
                       </p>
@@ -302,16 +304,17 @@ export default async function HomePage() {
                         alt={post.featuredImage.alt || post.title}
                         fill
                         className="object-cover transition-transform duration-500 group-hover:scale-105"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                       />
                     ) : (
                       <div className="absolute inset-0 flex items-center justify-center">
-                        <span className="material-icons text-4xl text-gray-300">article</span>
+                        <span className="material-icons text-4xl text-gray-500">article</span>
                       </div>
                     )}
                   </div>
                   <div className="py-4">
                     {post.publishedAt && (
-                      <time className="text-[10px] text-gray-500 uppercase tracking-widest">
+                      <time className="text-[10px] text-gray-600 uppercase tracking-widest">
                         {new Date(post.publishedAt).toLocaleDateString('en-US', {
                           month: 'long',
                           day: 'numeric',

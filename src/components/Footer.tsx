@@ -82,7 +82,7 @@ export async function Footer() {
                   />
                 ) : (
                   <div className="w-full h-full flex items-center justify-center">
-                    <span className="material-icons text-gray-600">event</span>
+                    <span className="material-icons text-gray-400">event</span>
                   </div>
                 )}
               </div>
